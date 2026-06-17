@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Platform Pricing — Vedhaan Technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0a;
+  --white:#fafaf8;
+  --off:#f2f0eb;
+  --border:#e0ddd6;
+  --muted:#888580;
+  --green:#2d6a2d;
+  --green-bg:#edf7ed;
+  --amber:#7a5000;
+  --amber-bg:#fff8e6;
+  --amber-mid:#f59e0b;
+  --blue:#1a3d6e;
+  --blue-bg:#eff5ff;
+  --accent:#b14b90;
+  --accent-light:#f9eef6;
+  --accent2:#f77b24;
+  --red:#7a1f1f;
+  --red-bg:#fef2f2;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.65}
+
+.hero{background:var(--black);color:var(--white);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;border:40px solid rgba(177,75,144,0.15)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:30%;width:160px;height:160px;border-radius:50%;border:25px solid rgba(247,123,36,0.08)}
+.hero-badge{display:inline-block;padding:4px 12px;border:1px solid rgba(177,75,144,0.5);border-radius:100px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-family:'Syne',sans-serif}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:.75rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:13px;color:rgba(250,250,248,0.55);margin-bottom:1.5rem}
+.hero-meta{display:flex;gap:1.5rem;flex-wrap:wrap}
+.hero-meta span{font-size:12px;color:rgba(250,250,248,0.4);display:flex;align-items:center;gap:5px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+
+.content{padding:1.75rem 1.25rem 4rem;max-width:680px;margin:0 auto}
+
+.section-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:2rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.section-label:first-child{margin-top:0}
+
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.25rem;margin-bottom:1rem}
+.card.featured{border-color:var(--accent);border-width:1.5px}
+.card.dark{background:var(--black);border-color:var(--black);color:var(--white)}
+
+.plan-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:3px}
+.plan-tagline{font-size:13px;color:var(--muted)}
+.plan-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:.5rem}
+
+.badge{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:500;letter-spacing:.03em}
+.badge-green{background:var(--green-bg);color:var(--green)}
+.badge-amber{background:var(--amber-bg);color:var(--amber)}
+.badge-blue{background:var(--blue-bg);color:var(--blue)}
+.badge-accent{background:var(--accent-light);color:var(--accent)}
+.badge-red{background:var(--red-bg);color:var(--red)}
+
+.fee-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:13px;gap:.75rem}
+.fee-row:last-of-type{border-bottom:none}
+.fee-key{color:var(--muted);flex:1}
+.fee-key strong{color:var(--black);font-weight:500;display:block;margin-bottom:1px}
+.fee-val{font-weight:500;white-space:nowrap}
+.fee-val.accent{color:var(--accent)}
+.fee-val.green{color:var(--green)}
+.fee-val.muted{color:var(--muted)}
+
+.total-row{background:var(--off);border-radius:10px;padding:.85rem 1rem;display:flex;justify-content:space-between;align-items:center;margin-top:.75rem}
+.total-label{font-size:13px;font-weight:500}
+.total-val{font-size:22px;font-weight:700;font-family:'Syne',sans-serif;color:var(--accent)}
+
+.alert{border-radius:10px;padding:.85rem 1rem;font-size:13px;margin:.75rem 0;display:flex;gap:.6rem;align-items:flex-start;line-height:1.5}
+.alert-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.alert-green{background:var(--green-bg);color:var(--green)}
+.alert-amber{background:var(--amber-bg);color:var(--amber)}
+.alert-blue{background:var(--blue-bg);color:var(--blue)}
+.alert-accent{background:var(--accent-light);color:var(--accent)}
+
+.milestone-row{display:flex;gap:1rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.milestone-row:last-child{border-bottom:none}
+.milestone-num{width:28px;height:28px;border-radius:50%;background:var(--accent-light);color:var(--accent);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.milestone-info{flex:1}
+.milestone-title{font-size:14px;font-weight:500;margin-bottom:2px}
+.milestone-sub{font-size:12px;color:var(--muted)}
+.milestone-amt{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--accent);white-space:nowrap}
+
+.tag-row{display:flex;gap:6px;flex-wrap:wrap;margin:.75rem 0 0}
+
+.divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
+
+.footer-note{text-align:center;font-size:12px;color:var(--muted);padding:2rem 1.25rem 3rem;border-top:1px solid var(--border);line-height:1.7}
+.footer-note strong{color:var(--black)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Prepared by Vedhaan Technology</div>
+  <h1>Event Organizer<br><em>Website Pricing</em></h1>
+  <div class="hero-sub">Bhavnagar · Stall Booking with Online Payment</div>
+  <div class="hero-meta">
+    <span><span class="dot"></span> 5–6 Pages</span>
+    <span><span class="dot"></span> Razorpay Integrated</span>
+    <span><span class="dot"></span> 2 Cities</span>
+    <span><span class="dot"></span> June 2026</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="section-label">What's Included</div>
+
+  <div class="card">
+    <div class="fee-row">
+      <div class="fee-key"><strong>Homepage</strong>Upcoming events, city filter (Bhavnagar / Ahmedabad), hero banner</div>
+      <div class="fee-val accent">₹4,000</div>
+    </div>
+    <div class="fee-row">
+      <div class="fee-key"><strong>Event Detail Page</strong>Event name, date, venue, stall types with pricing</div>
+      <div class="fee-val accent">₹3,000</div>
+    </div>
+    <div class="fee-row">
+      <div class="fee-key"><strong>Stall Booking Page</strong>Select stall type, fill business details, proceed to payment</div>
+      <div class="fee-val accent">₹3,500</div>
+    </div>
+    <div class="fee-row">
+      <div class="fee-key"><strong>Razorpay Payment Integration</strong>UPI, card, net banking — booking confirmed after payment</div>
+      <div class="fee-val accent">₹5,000</div>
+    </div>
+    <div class="fee-row">
+      <div class="fee-key"><strong>Booking Confirmation + Email</strong>Confirmation page with booking ID, email to vendor & organizer</div>
+      <div class="fee-val accent">₹2,000</div>
+    </div>
+    <div class="fee-row">
+      <div class="fee-key"><strong>Admin Panel</strong>Add/edit events, view all bookings, mark confirmed / cancelled</div>
+      <div class="fee-val accent">₹5,000</div>
+    </div>
+    <div class="fee-row">
+      <div class="fee-key"><strong>Contact Page</strong>Enquiry form + WhatsApp link</div>
+      <div class="fee-val accent">₹1,000</div>
+    </div>
+    <div class="fee-row">
+      <div class="fee-key"><strong>Deployment & Domain Setup</strong>Hosted on Render/Vercel, SSL certificate, domain connected</div>
+      <div class="fee-val accent">₹1,500</div>
+    </div>
+
+    <div class="total-row">
+      <div>
+        <div class="total-label">Total Project Price</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">5–6 weeks delivery · Mobile responsive</div>
+      </div>
+      <div class="total-val">₹25,000</div>
+    </div>
+  </div>
+
+  <div class="tag-row" style="margin-bottom:1rem">
+    <span class="badge badge-green">Mobile Responsive</span>
+    <span class="badge badge-green">Razorpay Payments</span>
+    <span class="badge badge-green">Email Confirmations</span>
+    <span class="badge badge-green">Admin Panel</span>
+    <span class="badge badge-green">2 Cities</span>
+  </div>
+
+  <div class="alert alert-accent">
+    <span class="alert-icon">★</span>
+    <span>Razorpay charges <strong>2% per transaction</strong> — paid directly to Razorpay by the client. This is separate from Vedhaan's development fee.</span>
+  </div>
+
+  <div class="section-label">Payment Milestones</div>
+
+  <div class="card featured">
+    <div class="milestone-row">
+      <div class="milestone-num">1</div>
+      <div class="milestone-info">
+        <div class="milestone-title">Advance — Before Work Starts</div>
+        <div class="milestone-sub">Non-negotiable. No code until this is received.</div>
+      </div>
+      <div class="milestone-amt">₹10,000</div>
+    </div>
+    <div class="milestone-row">
+      <div class="milestone-num">2</div>
+      <div class="milestone-info">
+        <div class="milestone-title">All Pages + Payment Live on Staging</div>
+        <div class="milestone-sub">Frontend complete, Razorpay integrated, client reviews</div>
+      </div>
+      <div class="milestone-amt">₹10,000</div>
+    </div>
+    <div class="milestone-row">
+      <div class="milestone-num">3</div>
+      <div class="milestone-info">
+        <div class="milestone-title">Final Delivery — Admin Panel + Launch</div>
+        <div class="milestone-sub">Live on domain, admin credentials handed over</div>
+      </div>
+      <div class="milestone-amt">₹5,000</div>
+    </div>
+    <div class="total-row">
+      <div class="total-label">Total</div>
+      <div class="total-val">₹25,000</div>
+    </div>
+  </div>
+
+  <div class="section-label">Third-Party Costs (Client Pays Directly)</div>
+
+  <div class="card dark">
+    <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
+      <span style="color:rgba(255,255,255,0.5);font-size:13px">Razorpay</span>
+      <span style="color:var(--white);font-size:13px;font-weight:500">2% per booking transaction</span>
+    </div>
+    <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
+      <span style="color:rgba(255,255,255,0.5);font-size:13px">Domain Name</span>
+      <span style="color:var(--white);font-size:13px;font-weight:500">₹800–₹1,200 / year</span>
+    </div>
+    <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
+      <span style="color:rgba(255,255,255,0.5);font-size:13px">Email (Brevo)</span>
+      <span style="color:var(--white);font-size:13px;font-weight:500">Free up to 300 emails/day</span>
+    </div>
+    <div class="fee-row" style="border-color:rgba(255,255,255,0.1);border-bottom:none">
+      <span style="color:rgba(255,255,255,0.5);font-size:13px">Server Hosting</span>
+      <span style="color:var(--accent);font-size:13px;font-weight:500">Free tier available (Render / Vercel)</span>
+    </div>
+  </div>
+
+  <div class="alert alert-amber">
+    <span class="alert-icon">⚠</span>
+    <span>Any feature added after requirement sign-off is a change request and billed separately. Scope must be finalised before Milestone 1 payment.</span>
+  </div>
+
+</div>
+
+<div class="footer-note">
+  <strong>Prepared by Vedhaan Technology</strong><br>
+  Bhavnagar, Gujarat · vedhaan.com<br><br>
+  Prices as of June 2026. Final scope subject to client sign-off.
+</div>
+
+</body>
+</html>
