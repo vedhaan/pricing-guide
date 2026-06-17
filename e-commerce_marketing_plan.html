@@ -1,1251 +1,2075 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-Commerce Pricing Guide — Vedhaan Technology</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Pricing Guide — Vedhaan Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-:root{
-  --black:#0a0a0a;
-  --white:#fafaf8;
-  --off:#f2f0eb;
-  --border:#e0ddd6;
-  --muted:#888580;
-  --green:#2d6a2d;
-  --green-bg:#edf7ed;
-  --green-mid:#4caf50;
-  --amber:#7a5000;
-  --amber-bg:#fff8e6;
-  --amber-mid:#f59e0b;
-  --red:#7a1f1f;
-  --red-bg:#fef2f2;
-  --blue:#1a3d6e;
-  --blue-bg:#eff5ff;
-  --accent:#c97a2a;
-  --accent-light:#fdf0e0;
-}
+    :root {
+      --black: #0a0a0a;
+      --white: #fafaf8;
+      --off: #f2f0eb;
+      --border: #e0ddd6;
+      --muted: #888580;
+      --green: #2d6a2d;
+      --green-bg: #edf7ed;
+      --green-mid: #4caf50;
+      --amber: #7a5000;
+      --amber-bg: #fff8e6;
+      --amber-mid: #f59e0b;
+      --red: #7a1f1f;
+      --red-bg: #fef2f2;
+      --blue: #1a3d6e;
+      --blue-bg: #eff5ff;
+      --accent: #c97a2a;
+      --accent-light: #fdf0e0;
+    }
 
-html{scroll-behavior:smooth}
+    html {
+      scroll-behavior: smooth
+    }
 
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--white);
-  color:var(--black);
-  font-size:15px;
-  line-height:1.65;
-}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 15px;
+      line-height: 1.65;
+    }
 
-/* ─── HEADER ─── */
-.hero{
-  background:var(--black);
-  color:var(--white);
-  padding:3rem 1.5rem 2.5rem;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  top:-60px;right:-60px;
-  width:220px;height:220px;
-  border-radius:50%;
-  border:40px solid rgba(201,122,42,0.12);
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  bottom:-40px;left:30%;
-  width:160px;height:160px;
-  border-radius:50%;
-  border:25px solid rgba(201,122,42,0.07);
-}
-.hero-badge{
-  display:inline-block;
-  padding:4px 12px;
-  border:1px solid rgba(201,122,42,0.4);
-  border-radius:100px;
-  font-size:11px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:1rem;
-  font-family:'Syne',sans-serif;
-}
-.hero h1{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(1.6rem,5vw,2.4rem);
-  font-weight:700;
-  line-height:1.15;
-  margin-bottom:.75rem;
-  position:relative;
-}
-.hero h1 em{
-  font-style:normal;
-  color:var(--accent);
-}
-.hero-sub{
-  font-size:13px;
-  color:rgba(250,250,248,0.55);
-  margin-bottom:1.5rem;
-}
-.hero-meta{
-  display:flex;
-  gap:1.5rem;
-  flex-wrap:wrap;
-}
-.hero-meta span{
-  font-size:12px;
-  color:rgba(250,250,248,0.4);
-  display:flex;
-  align-items:center;
-  gap:5px;
-}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+    /* ─── HEADER ─── */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 3rem 1.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* ─── NAV TABS ─── */
-.sticky-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:var(--white);
-  border-bottom:1px solid var(--border);
-  padding:0 1.25rem;
-  overflow-x:auto;
-  white-space:nowrap;
-  -webkit-overflow-scrolling:touch;
-}
-.nav-inner{
-  display:inline-flex;
-  gap:0;
-  min-width:100%;
-}
-.nav-tab{
-  padding:.85rem 1.1rem;
-  font-size:13px;
-  font-weight:500;
-  color:var(--muted);
-  cursor:pointer;
-  border-bottom:2px solid transparent;
-  transition:all .2s;
-  white-space:nowrap;
-  background:none;
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  font-family:'DM Sans',sans-serif;
-}
-.nav-tab.active{
-  color:var(--black);
-  border-bottom-color:var(--accent);
-}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 40px solid rgba(201, 122, 42, 0.12);
+    }
 
-/* ─── CONTENT ─── */
-.content{padding:1.5rem 1.25rem 4rem;max-width:700px;margin:0 auto}
-.tab-section{display:none}
-.tab-section.active{display:block}
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 30%;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 25px solid rgba(201, 122, 42, 0.07);
+    }
 
-.section-label{
-  font-size:11px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--muted);
-  font-weight:500;
-  margin:2rem 0 .75rem;
-  padding-bottom:.5rem;
-  border-bottom:1px solid var(--border);
-}
-.section-label:first-child{margin-top:0}
+    .hero-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1px solid rgba(201, 122, 42, 0.4);
+      border-radius: 100px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-family: 'Syne', sans-serif;
+    }
 
-/* ─── CARDS ─── */
-.card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:1.25rem;
-  margin-bottom:1rem;
-}
-.card.featured{
-  border-color:var(--accent);
-  border-width:1.5px;
-}
-.card.dark{
-  background:var(--black);
-  border-color:var(--black);
-  color:var(--white);
-}
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: .75rem;
+      position: relative;
+    }
 
-/* ─── BADGES ─── */
-.badge{
-  display:inline-block;
-  padding:3px 10px;
-  border-radius:100px;
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:.03em;
-}
-.badge-green{background:var(--green-bg);color:var(--green)}
-.badge-amber{background:var(--amber-bg);color:var(--amber)}
-.badge-blue{background:var(--blue-bg);color:var(--blue)}
-.badge-accent{background:var(--accent-light);color:var(--accent)}
-.badge-dark{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8)}
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
 
-/* ─── PLAN CARDS ─── */
-.plan-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  margin-bottom:1rem;
-  gap:.5rem;
-}
-.plan-name{
-  font-family:'Syne',sans-serif;
-  font-size:17px;
-  font-weight:700;
-  margin-bottom:3px;
-}
-.plan-tagline{font-size:13px;color:var(--muted)}
+    .hero-sub {
+      font-size: 13px;
+      color: rgba(250, 250, 248, 0.55);
+      margin-bottom: 1.5rem;
+    }
 
-.price-block{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  padding:.6rem 0;
-  border-bottom:1px solid var(--border);
-  gap:.5rem;
-}
-.price-block:last-of-type{border-bottom:none}
-.pb-label{font-size:13px;color:var(--muted);flex:1}
-.pb-right{text-align:right}
-.pb-val{font-size:15px;font-weight:500;color:var(--black)}
-.pb-note{font-size:11px;color:var(--muted)}
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
 
-.total-row{
-  background:var(--off);
-  border-radius:10px;
-  padding:.85rem 1rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:.75rem;
-}
-.total-label{font-size:13px;font-weight:500}
-.total-val{font-size:22px;font-weight:700;font-family:'Syne',sans-serif;color:var(--accent)}
+    .hero-meta span {
+      font-size: 12px;
+      color: rgba(250, 250, 248, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-/* ─── ALERT BOXES ─── */
-.alert{
-  border-radius:10px;
-  padding:.85rem 1rem;
-  font-size:13px;
-  margin:.75rem 0;
-  display:flex;
-  gap:.6rem;
-  align-items:flex-start;
-  line-height:1.5;
-}
-.alert-icon{font-size:16px;flex-shrink:0;margin-top:1px}
-.alert-green{background:var(--green-bg);color:var(--green)}
-.alert-amber{background:var(--amber-bg);color:var(--amber)}
-.alert-blue{background:var(--blue-bg);color:var(--blue)}
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block
+    }
 
-/* ─── PLATFORM CARDS ─── */
-.platform-card{
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  margin-bottom:1rem;
-}
-.platform-top{
-  padding:1rem 1.25rem;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.platform-name{
-  font-family:'Syne',sans-serif;
-  font-size:16px;
-  font-weight:700;
-}
-.platform-body{padding:1rem 1.25rem}
+    /* ─── NAV TABS ─── */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.25rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-.fee-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:.4rem 0;
-  border-bottom:1px solid var(--border);
-  font-size:13px;
-}
-.fee-row:last-of-type{border-bottom:none}
-.fee-key{color:var(--muted)}
-.fee-val{font-weight:500}
-.fee-val.green{color:var(--green)}
-.fee-val.red{color:var(--red)}
-.fee-val.amber{color:var(--amber)}
+    .nav-inner {
+      display: inline-flex;
+      gap: 0;
+      min-width: 100%;
+    }
 
-.bar-wrap{
-  height:5px;
-  background:var(--off);
-  border-radius:3px;
-  margin:.6rem 0 .3rem;
-  overflow:hidden;
-}
-.bar-fill{height:100%;border-radius:3px;background:var(--accent)}
+    .nav-tab {
+      padding: .85rem 1.1rem;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all .2s;
+      white-space: nowrap;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: 'DM Sans', sans-serif;
+    }
 
-.best-for{
-  margin-top:.75rem;
-  padding:.6rem .85rem;
-  background:var(--off);
-  border-radius:8px;
-  font-size:12px;
-  color:var(--muted);
-}
-.best-for strong{color:var(--black)}
+    .nav-tab.active {
+      color: var(--black);
+      border-bottom-color: var(--accent);
+    }
 
-/* ─── PRODUCT TABLE ─── */
-.product-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:13px;
-}
-.product-table th{
-  text-align:left;
-  padding:.6rem .75rem;
-  font-size:11px;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:var(--muted);
-  border-bottom:1px solid var(--border);
-  font-weight:500;
-  background:var(--off);
-}
-.product-table td{
-  padding:.65rem .75rem;
-  border-bottom:1px solid var(--border);
-  vertical-align:top;
-}
-.product-table tr:last-child td{border-bottom:none}
-.product-table tr:hover td{background:var(--off)}
-.product-tag{
-  display:inline-block;
-  font-size:10px;
-  padding:2px 7px;
-  border-radius:100px;
-  margin-top:2px;
-}
+    /* ─── CONTENT ─── */
+    .content {
+      padding: 1.5rem 1.25rem 4rem;
+      max-width: 700px;
+      margin: 0 auto
+    }
 
-/* ─── CALCULATOR ─── */
-.calc-wrap{background:var(--off);border-radius:16px;padding:1.25rem;margin-bottom:1rem}
-.form-group{margin-bottom:1rem}
-.form-label{font-size:12px;color:var(--muted);margin-bottom:.4rem;display:block;font-weight:500;letter-spacing:.03em}
-select,input[type=number]{
-  width:100%;
-  padding:.6rem .85rem;
-  border:1px solid var(--border);
-  border-radius:8px;
-  background:var(--white);
-  font-size:14px;
-  color:var(--black);
-  font-family:'DM Sans',sans-serif;
-  appearance:none;
-  -webkit-appearance:none;
-}
-select:focus,input:focus{outline:2px solid var(--accent);outline-offset:1px}
+    .tab-section {
+      display: none
+    }
 
-.calc-result{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-}
-.calc-result-header{
-  background:var(--black);
-  color:var(--white);
-  padding:1rem 1.25rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.calc-result-title{font-size:13px;opacity:.6}
-.calc-result-profit{
-  font-family:'Syne',sans-serif;
-  font-size:28px;
-  font-weight:700;
-}
-.calc-result-profit.positive{color:#6fcf97}
-.calc-result-profit.negative{color:#eb5757}
+    .tab-section.active {
+      display: block
+    }
 
-.calc-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1px;
-  background:var(--border);
-}
-.calc-cell{
-  background:var(--white);
-  padding:.85rem;
-}
-.calc-cell-label{font-size:11px;color:var(--muted);margin-bottom:3px}
-.calc-cell-val{font-size:16px;font-weight:600;font-family:'Syne',sans-serif}
-.calc-cell-val.deduct{color:var(--red)}
-.calc-cell-val.neutral{color:var(--black)}
+    .section-label {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin: 2rem 0 .75rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-.margin-bar-wrap{
-  padding:1rem 1.25rem;
-  border-top:1px solid var(--border);
-}
-.margin-bar-label{
-  display:flex;
-  justify-content:space-between;
-  font-size:12px;
-  margin-bottom:.4rem;
-}
-.margin-track{
-  height:8px;
-  background:var(--off);
-  border-radius:4px;
-  overflow:hidden;
-}
-.margin-fill{
-  height:100%;
-  border-radius:4px;
-  transition:width .4s ease;
-}
+    .section-label:first-child {
+      margin-top: 0
+    }
 
-.calc-breakdown{padding:0 1.25rem 1.25rem}
-.breakdown-row{
-  display:flex;
-  justify-content:space-between;
-  font-size:13px;
-  padding:.4rem 0;
-  border-bottom:1px dotted var(--border);
-}
-.breakdown-row:last-child{
-  border-bottom:none;
-  font-weight:600;
-  padding-top:.6rem;
-}
-.breakdown-key{color:var(--muted)}
+    /* ─── CARDS ─── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
 
-/* ─── PRICING TABLE ─── */
-.price-guide-card{
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  margin-bottom:1rem;
-}
-.pgc-header{
-  padding:1rem 1.25rem;
-  background:var(--off);
-  border-bottom:1px solid var(--border);
-  font-family:'Syne',sans-serif;
-  font-weight:700;
-  font-size:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    .card.featured {
+      border-color: var(--accent);
+      border-width: 1.5px;
+    }
 
-/* ─── TAG ROW ─── */
-.tag-row{display:flex;gap:6px;flex-wrap:wrap;margin:.75rem 0}
+    .card.dark {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
 
-/* ─── LICENSE NOTE ─── */
-.footer-note{
-  text-align:center;
-  font-size:12px;
-  color:var(--muted);
-  padding:2rem 1.25rem 3rem;
-  border-top:1px solid var(--border);
-  line-height:1.7;
-}
+    /* ─── BADGES ─── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
 
-.footer-note a{
-  text-align:center;
-  font-size:12px;
-  color:var(--muted);
-  border-top:1px solid var(--border);
-  line-height:1.7;
-}
+    .badge-green {
+      background: var(--green-bg);
+      color: var(--green)
+    }
 
-.footer-note strong{color:var(--black)}
+    .badge-amber {
+      background: var(--amber-bg);
+      color: var(--amber)
+    }
 
-/* ─── MOBILE ─── */
-@media(max-width:480px){
-  .calc-grid{grid-template-columns:1fr 1fr}
-  .price-block{flex-direction:column;gap:.2rem}
-  .pb-right{text-align:left}
-}
-</style>
+    .badge-blue {
+      background: var(--blue-bg);
+      color: var(--blue)
+    }
+
+    .badge-accent {
+      background: var(--accent-light);
+      color: var(--accent)
+    }
+
+    .badge-dark {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8)
+    }
+
+    /* ─── PLAN CARDS ─── */
+    .plan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: .5rem;
+    }
+
+    .plan-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .plan-tagline {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .price-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--border);
+      gap: .5rem;
+    }
+
+    .price-block:last-of-type {
+      border-bottom: none
+    }
+
+    .pb-label {
+      font-size: 13px;
+      color: var(--muted);
+      flex: 1
+    }
+
+    .pb-right {
+      text-align: right
+    }
+
+    .pb-val {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black)
+    }
+
+    .pb-note {
+      font-size: 11px;
+      color: var(--muted)
+    }
+
+    .total-row {
+      background: var(--off);
+      border-radius: 10px;
+      padding: .85rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .75rem;
+    }
+
+    .total-label {
+      font-size: 13px;
+      font-weight: 500
+    }
+
+    .total-val {
+      font-size: 22px;
+      font-weight: 700;
+      font-family: 'Syne', sans-serif;
+      color: var(--accent)
+    }
+
+    /* ─── ALERT BOXES ─── */
+    .alert {
+      border-radius: 10px;
+      padding: .85rem 1rem;
+      font-size: 13px;
+      margin: .75rem 0;
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .alert-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .alert-green {
+      background: var(--green-bg);
+      color: var(--green)
+    }
+
+    .alert-amber {
+      background: var(--amber-bg);
+      color: var(--amber)
+    }
+
+    .alert-blue {
+      background: var(--blue-bg);
+      color: var(--blue)
+    }
+
+    /* ─── PLATFORM CARDS ─── */
+    .platform-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .platform-top {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .platform-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .platform-body {
+      padding: 1rem 1.25rem
+    }
+
+    .fee-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .4rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .fee-row:last-of-type {
+      border-bottom: none
+    }
+
+    .fee-key {
+      color: var(--muted)
+    }
+
+    .fee-val {
+      font-weight: 500
+    }
+
+    .fee-val.green {
+      color: var(--green)
+    }
+
+    .fee-val.red {
+      color: var(--red)
+    }
+
+    .fee-val.amber {
+      color: var(--amber)
+    }
+
+    .bar-wrap {
+      height: 5px;
+      background: var(--off);
+      border-radius: 3px;
+      margin: .6rem 0 .3rem;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--accent)
+    }
+
+    .best-for {
+      margin-top: .75rem;
+      padding: .6rem .85rem;
+      background: var(--off);
+      border-radius: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .best-for strong {
+      color: var(--black)
+    }
+
+    /* ─── PRODUCT TABLE ─── */
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .product-table th {
+      text-align: left;
+      padding: .6rem .75rem;
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      font-weight: 500;
+      background: var(--off);
+    }
+
+    .product-table td {
+      padding: .65rem .75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .product-table tr:last-child td {
+      border-bottom: none
+    }
+
+    .product-table tr:hover td {
+      background: var(--off)
+    }
+
+    .product-tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 100px;
+      margin-top: 2px;
+    }
+
+    /* ─── CALCULATOR ─── */
+    .calc-wrap {
+      background: var(--off);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 1rem
+    }
+
+    .form-group {
+      margin-bottom: 1rem
+    }
+
+    .form-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: .4rem;
+      display: block;
+      font-weight: 500;
+      letter-spacing: .03em
+    }
+
+    select,
+    input[type=number] {
+      width: 100%;
+      padding: .6rem .85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      font-size: 14px;
+      color: var(--black);
+      font-family: 'DM Sans', sans-serif;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    select:focus,
+    input:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px
+    }
+
+    .calc-result {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .calc-result-header {
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calc-result-title {
+      font-size: 13px;
+      opacity: .6
+    }
+
+    .calc-result-profit {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .calc-result-profit.positive {
+      color: #6fcf97
+    }
+
+    .calc-result-profit.negative {
+      color: #eb5757
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .calc-cell {
+      background: var(--white);
+      padding: .85rem;
+    }
+
+    .calc-cell-label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 3px
+    }
+
+    .calc-cell-val {
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Syne', sans-serif
+    }
+
+    .calc-cell-val.deduct {
+      color: var(--red)
+    }
+
+    .calc-cell-val.neutral {
+      color: var(--black)
+    }
+
+    .margin-bar-wrap {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .margin-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: .4rem;
+    }
+
+    .margin-track {
+      height: 8px;
+      background: var(--off);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .margin-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width .4s ease;
+    }
+
+    .calc-breakdown {
+      padding: 0 1.25rem 1.25rem
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: .4rem 0;
+      border-bottom: 1px dotted var(--border);
+    }
+
+    .breakdown-row:last-child {
+      border-bottom: none;
+      font-weight: 600;
+      padding-top: .6rem;
+    }
+
+    .breakdown-key {
+      color: var(--muted)
+    }
+
+    /* ─── PRICING TABLE ─── */
+    .price-guide-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .pgc-header {
+      padding: 1rem 1.25rem;
+      background: var(--off);
+      border-bottom: 1px solid var(--border);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ─── TAG ROW ─── */
+    .tag-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: .75rem 0
+    }
+
+    /* ─── LICENSE NOTE ─── */
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 2rem 1.25rem 3rem;
+      border-top: 1px solid var(--border);
+      line-height: 1.7;
+    }
+
+    .footer-note strong {
+      color: var(--black)
+    }
+
+    /* ─── MOBILE ─── */
+    @media(max-width:480px) {
+      .calc-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .price-block {
+        flex-direction: column;
+        gap: .2rem
+      }
+
+      .pb-right {
+        text-align: left
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">Prepared by Vedhaan Technology</div>
-  <h1>E-Commerce<br><em>Pricing Guide</em></h1>
-  <div class="hero-sub">Service plans · Platform commissions · Profit calculator</div>
-  <div class="hero-meta">
-    <span><span class="dot"></span> 10 Products</span>
-    <span><span class="dot"></span> 5 Platforms</span>
-    <span><span class="dot"></span> Bhavnagar, Gujarat</span>
-    <span><span class="dot"></span> May 2026</span>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Prepared by Vedhaan Technology</div>
+    <h1>E-Commerce<br><em>Pricing Guide</em></h1>
+    <div class="hero-sub">Service plans · Platform commissions · Profit calculator</div>
+    <div class="hero-meta">
+      <span><span class="dot"></span> 10 Products</span>
+      <span><span class="dot"></span> 5 Platforms</span>
+      <span><span class="dot"></span> Bhavnagar, Gujarat</span>
+      <span><span class="dot"></span> May 2026</span>
+    </div>
   </div>
-</div>
 
-<!-- NAV -->
-<nav class="sticky-nav" aria-label="Section navigation">
-  <div class="nav-inner">
-    <button class="nav-tab active" onclick="showTab('plans',this)">Service Plans</button>
-    <button class="nav-tab" onclick="showTab('platforms',this)">Platforms</button>
-    <button class="nav-tab" onclick="showTab('products',this)">Products & Pricing</button>
-    <button class="nav-tab" onclick="showTab('calculator',this)">Profit Calculator</button>
-    <button class="nav-tab" onclick="showTab('docs',this)">Documents Needed</button>
-  </div>
-</nav>
-
-<div class="content">
-
-<!-- ══════════ TAB 1: SERVICE PLANS ══════════ -->
-<div class="tab-section active" id="tab-plans">
-
-  <div class="section-label">Setup cost — one-time</div>
-
-  <!-- PLAN A -->
-  <div class="card featured">
-    <div class="plan-header">
-      <div>
-        <div class="plan-name">Plan A</div>
-        <div class="plan-tagline">Full platform management + product photoshoot</div>
-      </div>
-      <span class="badge badge-accent">Recommended</span>
+  <!-- NAV -->
+  <nav class="sticky-nav" aria-label="Section navigation">
+    <div class="nav-inner">
+      <button class="nav-tab active" onclick="showTab('plans',this)">Service Plans</button>
+      <button class="nav-tab" onclick="showTab('platforms',this)">Platforms</button>
+      <button class="nav-tab" onclick="showTab('products',this)">Products & Pricing</button>
+      <button class="nav-tab" onclick="showTab('calculator',this)">Profit Calculator</button>
+      <button class="nav-tab" onclick="showTab('docs',this)">Documents Needed</button>
+      <button class="nav-tab" onclick="showTab('ownstore',this)">Own Store</button>
     </div>
+  </nav>
 
-    <div class="section-label" style="margin-top:.25rem">One-Time Setup</div>
-    <div class="price-block">
-      <div class="pb-label">Platform registration (per platform)<br><span style="font-size:11px;color:#aaa">Seller account + FSSAI linking + product listing</span></div>
-      <div class="pb-right">
-        <div class="pb-val">₹2,000/platform</div>
-        <div class="pb-note">×3 platforms = ₹6,000</div>
-      </div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Product photoshoot (10 SKUs)<br><span style="font-size:11px;color:#aaa">White bg + 1 lifestyle shot each, edited & delivered</span></div>
-      <div class="pb-right">
-        <div class="pb-val">₹4,000</div>
-        <div class="pb-note">₹400/product</div>
-      </div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Product listings & content<br><span style="font-size:11px;color:#aaa">Titles, descriptions, keywords for all 10 SKUs × 3 platforms</span></div>
-      <div class="pb-right">
-        <div class="pb-val">₹3,000</div>
-      </div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Brand page / storefront setup</div>
-      <div class="pb-right">
-        <div class="pb-val">₹1,500</div>
-      </div>
-    </div>
-    <div class="total-row">
-      <div class="total-label">Total Setup Cost</div>
-      <div class="total-val">₹14,500</div>
-    </div>
+  <div class="content">
 
-    <div class="section-label">Monthly Retainer</div>
-    <div class="price-block">
-      <div class="pb-label">Account & order management<br><span style="font-size:11px;color:#aaa">Monitoring orders, returns, seller health across all platforms</span></div>
-      <div class="pb-right">
-        <div class="pb-val">₹2,500/platform/mo 
-        <div class="pb-note">Applies only upto 10 products</div>
+    <!-- ══════════ TAB 1: SERVICE PLANS ══════════ -->
+    <div class="tab-section active" id="tab-plans">
+
+      <div class="section-label">Setup cost — one-time</div>
+
+      <!-- PLAN A -->
+      <div class="card featured">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Plan A</div>
+            <div class="plan-tagline">Full platform management + product photoshoot</div>
+          </div>
+          <span class="badge badge-accent">Recommended</span>
+        </div>
+
+        <div class="section-label" style="margin-top:.25rem">One-Time Setup</div>
+        <div class="price-block">
+          <div class="pb-label">Platform registration (per platform)<br><span style="font-size:11px;color:#aaa">Seller
+              account + FSSAI linking + product listing</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹2,000/platform</div>
+            <div class="pb-note">×3 platforms = ₹6,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Product photoshoot (10 SKUs)<br><span style="font-size:11px;color:#aaa">White bg + 1
+              lifestyle shot each, edited & delivered</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹4,000</div>
+            <div class="pb-note">₹400/product</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Product listings & content<br><span style="font-size:11px;color:#aaa">Titles,
+              descriptions, keywords for all 10 SKUs × 3 platforms</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹3,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Brand page / storefront setup</div>
+          <div class="pb-right">
+            <div class="pb-val">₹1,500</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Total Setup Cost</div>
+          <div class="total-val">₹14,500</div>
+        </div>
+
+        <div class="section-label">Monthly Retainer</div>
+        <div class="price-block">
+          <div class="pb-label">Account & order management<br><span style="font-size:11px;color:#aaa">Monitoring orders,
+              returns, seller health across all platforms</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹2,500/platform/mo
+              <div class="pb-note">Applies only upto 10 products</div>
+            </div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Listings update & promotions<br><span style="font-size:11px;color:#aaa">Price changes,
+              deals, seasonal banners</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹1,000/mo</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Monthly performance report</div>
+          <div class="pb-right">
+            <div class="pb-val">Included</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Monthly Retainer</div>
+          <div class="total-val">₹3,500/mo</div>
+        </div>
+
+        <div class="tag-row">
+          <span class="badge badge-green">Amazon</span>
+          <span class="badge badge-green">Blinkit</span>
+          <span class="badge badge-green">Zepto</span>
+          <span class="badge badge-green">JioMart</span>
+          <span class="badge badge-green">Flipkart Grocery</span>
         </div>
       </div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Listings update & promotions<br><span style="font-size:11px;color:#aaa">Price changes, deals, seasonal banners</span></div>
-      <div class="pb-right"><div class="pb-val">₹1,000/mo</div></div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Monthly performance report</div>
-      <div class="pb-right"><div class="pb-val">Included</div></div>
-    </div>
-    <div class="total-row">
-      <div class="total-label">Monthly Retainer</div>
-      <div class="total-val">₹3,500/mo</div>
-    </div>
 
-    <div class="tag-row">
-      <span class="badge badge-green">Amazon</span>
-      <span class="badge badge-green">Blinkit</span>
-      <span class="badge badge-green">Zepto</span>
-      <span class="badge badge-green">JioMart</span>
-      <span class="badge badge-green">Flipkart Grocery</span>
-    </div>
-  </div>
+      <!-- PLAN B -->
+      <div class="card">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Plan B</div>
+            <div class="plan-tagline">Product photoshoot only</div>
+          </div>
+          <span class="badge badge-blue">Standalone</span>
+        </div>
 
-  <!-- PLAN B -->
-  <div class="card">
-    <div class="plan-header">
-      <div>
-        <div class="plan-name">Plan B</div>
-        <div class="plan-tagline">Product photoshoot only</div>
+        <div class="price-block">
+          <div class="pb-label">White background e-commerce shot<br><span style="font-size:11px;color:#aaa">Per product,
+              marketplace-ready, retouched</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹400–500/product</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">10-product package deal</div>
+          <div class="pb-right">
+            <div class="pb-val">₹3,500</div>
+            <div class="pb-note">Save ₹500</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Lifestyle / contextual shot (add-on)</div>
+          <div class="pb-right">
+            <div class="pb-val">₹300/product</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Reel / short video (add-on)</div>
+          <div class="pb-right">
+            <div class="pb-val">₹800/product</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Delivery (edited, upload-ready)</div>
+          <div class="pb-right">
+            <div class="pb-val">3–5 working days</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">10 Products (white bg only)</div>
+          <div class="total-val">₹3,500</div>
+        </div>
+
+        <div class="alert alert-blue" style="margin-top:1rem">
+          <span class="alert-icon">ℹ</span>
+          <span>Client manages her own listings after photos are delivered. Suitable if she already has someone handling
+            her marketplace accounts.</span>
+        </div>
       </div>
-      <span class="badge badge-blue">Standalone</span>
-    </div>
 
-    <div class="price-block">
-      <div class="pb-label">White background e-commerce shot<br><span style="font-size:11px;color:#aaa">Per product, marketplace-ready, retouched</span></div>
-      <div class="pb-right"><div class="pb-val">₹400–500/product</div></div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">10-product package deal</div>
-      <div class="pb-right">
-        <div class="pb-val">₹3,500</div>
-        <div class="pb-note">Save ₹500</div>
+      <!-- COMPARISON TABLE -->
+      <div class="section-label">Plan comparison</div>
+      <div class="price-guide-card">
+        <div class="pgc-header">
+          <span>What's included</span>
+          <span style="font-size:12px;font-weight:400;color:var(--muted)">A vs B</span>
+        </div>
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th style="text-align:center">Plan A</th>
+              <th style="text-align:center">Plan B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product photoshoot (10 SKUs)</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>Lifestyle / contextual shots</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">Add-on</td>
+            </tr>
+            <tr>
+              <td>Platform seller registration</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">❌</td>
+            </tr>
+            <tr>
+              <td>Product listing & content writing</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">❌</td>
+            </tr>
+            <tr>
+              <td>Ongoing account management</td>
+              <td style="text-align:center">✅ Monthly</td>
+              <td style="text-align:center">❌</td>
+            </tr>
+            <tr>
+              <td>Order & return monitoring</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">❌</td>
+            </tr>
+            <tr>
+              <td>Monthly sales report</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">❌</td>
+            </tr>
+            <tr>
+              <td>Promotions & deals management</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">❌</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Lifestyle / contextual shot (add-on)</div>
-      <div class="pb-right"><div class="pb-val">₹300/product</div></div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Reel / short video (add-on)</div>
-      <div class="pb-right"><div class="pb-val">₹800/product</div></div>
-    </div>
-    <div class="price-block">
-      <div class="pb-label">Delivery (edited, upload-ready)</div>
-      <div class="pb-right"><div class="pb-val">3–5 working days</div></div>
-    </div>
-    <div class="total-row">
-      <div class="total-label">10 Products (white bg only)</div>
-      <div class="total-val">₹3,500</div>
-    </div>
 
-    <div class="alert alert-blue" style="margin-top:1rem">
-      <span class="alert-icon">ℹ</span>
-      <span>Client manages her own listings after photos are delivered. Suitable if she already has someone handling her marketplace accounts.</span>
-    </div>
-  </div>
-
-  <!-- COMPARISON TABLE -->
-  <div class="section-label">Plan comparison</div>
-  <div class="price-guide-card">
-    <div class="pgc-header">
-      <span>What's included</span>
-      <span style="font-size:12px;font-weight:400;color:var(--muted)">A vs B</span>
-    </div>
-    <table class="product-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th style="text-align:center">Plan A</th>
-          <th style="text-align:center">Plan B</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Product photoshoot (10 SKUs)</td><td style="text-align:center">✅</td><td style="text-align:center">✅</td></tr>
-        <tr><td>Lifestyle / contextual shots</td><td style="text-align:center">✅</td><td style="text-align:center">Add-on</td></tr>
-        <tr><td>Platform seller registration</td><td style="text-align:center">✅</td><td style="text-align:center">❌</td></tr>
-        <tr><td>Product listing & content writing</td><td style="text-align:center">✅</td><td style="text-align:center">❌</td></tr>
-        <tr><td>Ongoing account management</td><td style="text-align:center">✅ Monthly</td><td style="text-align:center">❌</td></tr>
-        <tr><td>Order & return monitoring</td><td style="text-align:center">✅</td><td style="text-align:center">❌</td></tr>
-        <tr><td>Monthly sales report</td><td style="text-align:center">✅</td><td style="text-align:center">❌</td></tr>
-        <tr><td>Promotions & deals management</td><td style="text-align:center">✅</td><td style="text-align:center">❌</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="alert alert-amber">
-    <span class="alert-icon">⚠</span>
-    <span><strong>Important:</strong> FSSAI registration and GST registration are the client's responsibility (food items are mandatory). Vedhaan Technology can guide the process but registration fees are separate and paid directly to the government. FSSAI typically takes 15–30 days. No platform will approve food product listings without it.</span>
-  </div>
-
-</div><!-- end tab-plans -->
-
-
-<!-- ══════════ TAB 2: PLATFORMS ══════════ -->
-<div class="tab-section" id="tab-platforms">
-
-  <div class="section-label">Active in Bhavnagar</div>
-
-  <!-- AMAZON -->
-  <div class="platform-card">
-    <div class="platform-top">
-      <div>
-        <div class="platform-name">Amazon Fresh / Amazon.in</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">Grocery & staples marketplace</div>
-      </div>
-      <span class="badge badge-green">Live in Bhavnagar</span>
-    </div>
-    <div class="platform-body">
-      <div class="bar-wrap"><div class="bar-fill" style="width:10%"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
-        <span>Commission range</span><span>0–5% on grocery</span>
-      </div>
-      <div class="fee-row"><span class="fee-key">Commission (grocery/staples ≤₹300)</span><span class="fee-val green">0%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (selling price &gt; ₹300)</span><span class="fee-val">~5%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (personal care — Ubtan, Hair Oil)</span><span class="fee-val">7–12%</span></div>
-      <div class="fee-row"><span class="fee-key">TCS (government mandatory)</span><span class="fee-val">1% of selling price</span></div>
-      <div class="fee-row"><span class="fee-key">GST on commission</span><span class="fee-val">18% on commission amt</span></div>
-      <div class="fee-row"><span class="fee-key">Closing / handling fee</span><span class="fee-val">₹10–30/order</span></div>
-      <div class="fee-row"><span class="fee-key">Total effective deduction</span><span class="fee-val green">~8–15%</span></div>
-      <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">Every 7 days</span></div>
-      <div class="best-for"><strong>Best for:</strong> Rice, Chana, Bajra, Juwar, Ravo — bulk staples. Price below ₹300 to pay 0% commission. Amazon has highest buyer trust for grocery in India.</div>
-    </div>
-  </div>
-
-  <!-- BLINKIT -->
-  <div class="platform-card">
-    <div class="platform-top">
-      <div>
-        <div class="platform-name">Blinkit</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">10–15 min quick delivery</div>
-      </div>
-      <span class="badge badge-green">Live in Bhavnagar</span>
-    </div>
-    <div class="platform-body">
-      <div class="bar-wrap"><div class="bar-fill" style="width:32%"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
-        <span>Total effective cut</span><span>30–35% of selling price</span>
-      </div>
-      <div class="fee-row"><span class="fee-key">Commission (grocery & staples)</span><span class="fee-val">10–12%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (personal care — Ubtan, Hair Oil)</span><span class="fee-val">15–18%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (snacks — Popcorn, Pauva)</span><span class="fee-val">12–15%</span></div>
-      <div class="fee-row"><span class="fee-key">GST on commission</span><span class="fee-val">18% on commission amt</span></div>
-      <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
-      <div class="fee-row"><span class="fee-key">Storage / warehousing (dark store)</span><span class="fee-val amber">₹2–5/unit/day</span></div>
-      <div class="fee-row"><span class="fee-key">Total effective deduction</span><span class="fee-val amber">~30–35%</span></div>
-      <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">7–10 days</span></div>
-      <div class="alert alert-amber" style="margin-top:.75rem;font-size:12px">
+      <div class="alert alert-amber">
         <span class="alert-icon">⚠</span>
-        <span>Blinkit is a <strong>dark store / B2B supply model</strong> — you don't list and sell directly. You supply inventory to their Bhavnagar dark store. They control visibility, pricing & placement. High volumes preferred.</span>
+        <span><strong>Important:</strong> FSSAI registration and GST registration are the client's responsibility (food
+          items are mandatory). Vedhaan Technology can guide the process but registration fees are separate and paid
+          directly to the government. FSSAI typically takes 15–30 days. No platform will approve food product listings
+          without it.</span>
       </div>
-      <div class="best-for"><strong>Best for:</strong> Popcorn, Pauva, Ubtan — impulse-buy and convenience products. Not ideal for bulk staples at this margin level.</div>
-    </div>
-  </div>
 
-  <!-- ZEPTO -->
-  <div class="platform-card">
-    <div class="platform-top">
-      <div>
-        <div class="platform-name">Zepto</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">10 min delivery</div>
-      </div>
-      <span class="badge badge-green">Live in Bhavnagar</span>
-    </div>
-    <div class="platform-body">
-      <div class="bar-wrap"><div class="bar-fill" style="width:30%"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
-        <span>Commission range</span><span>15–22% + storage</span>
-      </div>
-      <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">15–18%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span class="fee-val">18–22%</span></div>
-      <div class="fee-row"><span class="fee-key">GST on commission</span><span class="fee-val">18% on commission amt</span></div>
-      <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
-      <div class="fee-row"><span class="fee-key">Storage + handling (dark store)</span><span class="fee-val amber">₹3–6/unit/day</span></div>
-      <div class="fee-row"><span class="fee-key">Total effective deduction</span><span class="fee-val amber">~28–35%</span></div>
-      <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">10–14 days</span></div>
-      <div class="best-for"><strong>Best for:</strong> Hair oil, Ubtan, Popcorn — beauty and snack categories get better placement on Zepto. Zepto take rate is rising (currently 22–23%).</div>
-    </div>
-  </div>
+    </div><!-- end tab-plans -->
 
-  <!-- JIOMART -->
-  <div class="platform-card">
-    <div class="platform-top">
-      <div>
-        <div class="platform-name">JioMart</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">Reliance's grocery marketplace</div>
-      </div>
-      <span class="badge badge-green">Live in Bhavnagar</span>
-    </div>
-    <div class="platform-body">
-      <div class="bar-wrap"><div class="bar-fill" style="width:18%"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
-        <span>Commission range</span><span>5–10% on grocery</span>
-      </div>
-      <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">5–8%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span class="fee-val">8–10%</span></div>
-      <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
-      <div class="fee-row"><span class="fee-key">Logistics (if not self-shipped)</span><span class="fee-val">₹30–60/order</span></div>
-      <div class="fee-row"><span class="fee-key">Total effective deduction</span><span class="fee-val green">~12–18%</span></div>
-      <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">15 days</span></div>
-      <div class="best-for"><strong>Best for:</strong> Ubtan, Hair Oil — JioMart has strong Gujarat kirana-style audience and good personal care demand. Also good for bulk Chana, Bajra, Rice.</div>
-    </div>
-  </div>
 
-  <!-- FLIPKART -->
-  <div class="platform-card">
-    <div class="platform-top">
-      <div>
-        <div class="platform-name">Flipkart Grocery</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">India's largest e-commerce grocery vertical</div>
-      </div>
-      <span class="badge badge-green">Live in Bhavnagar</span>
-    </div>
-    <div class="platform-body">
-      <div class="bar-wrap"><div class="bar-fill" style="width:20%"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
-        <span>Commission range</span><span>6–12% on grocery</span>
-      </div>
-      <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">6–10%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span class="fee-val">10–12%</span></div>
-      <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
-      <div class="fee-row"><span class="fee-key">Logistics (Ekart)</span><span class="fee-val">₹40–80/order</span></div>
-      <div class="fee-row"><span class="fee-key">Total effective deduction</span><span class="fee-val green">~13–20%</span></div>
-      <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">7–15 days</span></div>
-      <div class="best-for"><strong>Best for:</strong> Popcorn, Ravo, Pauva — packaged snack and ready-to-eat items get good traction. Flipkart buyer base is very price-sensitive; keep prices competitive.</div>
-    </div>
-  </div>
+    <!-- ══════════ TAB 2: PLATFORMS ══════════ -->
+    <div class="tab-section" id="tab-platforms">
 
-  <!-- SWIGGY INSTAMART -->
-  <div class="platform-card">
-    <div class="platform-top">
-      <div>
-        <div class="platform-name">Swiggy Instamart</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">15-min grocery delivery</div>
+      <div class="section-label">Active in Bhavnagar</div>
+
+      <!-- AMAZON -->
+      <div class="platform-card">
+        <div class="platform-top">
+          <div>
+            <div class="platform-name">Amazon Fresh / Amazon.in</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">Grocery & staples marketplace</div>
+          </div>
+          <span class="badge badge-green">Live in Bhavnagar</span>
+        </div>
+        <div class="platform-body">
+          <div class="bar-wrap">
+            <div class="bar-fill" style="width:10%"></div>
+          </div>
+          <div
+            style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
+            <span>Commission range</span><span>0–5% on grocery</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Commission (grocery/staples ≤₹300)</span><span
+              class="fee-val green">0%</span></div>
+          <div class="fee-row"><span class="fee-key">Commission (selling price &gt; ₹300)</span><span
+              class="fee-val">~5%</span></div>
+          <div class="fee-row"><span class="fee-key">Commission (personal care — Ubtan, Hair Oil)</span><span
+              class="fee-val">7–12%</span></div>
+          <div class="fee-row"><span class="fee-key">TCS (government mandatory)</span><span class="fee-val">1% of
+              selling price</span></div>
+          <div class="fee-row"><span class="fee-key">GST on commission</span><span class="fee-val">18% on commission
+              amt</span></div>
+          <div class="fee-row"><span class="fee-key">Closing / handling fee</span><span
+              class="fee-val">₹10–30/order</span></div>
+          <div class="fee-row"><span class="fee-key">Total effective deduction</span><span
+              class="fee-val green">~8–15%</span></div>
+          <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">Every 7 days</span></div>
+          <div class="best-for"><strong>Best for:</strong> Rice, Chana, Bajra, Juwar, Ravo — bulk staples. Price below
+            ₹300 to pay 0% commission. Amazon has highest buyer trust for grocery in India.</div>
+        </div>
       </div>
-      <span class="badge badge-amber">Check pin coverage</span>
-    </div>
-    <div class="platform-body">
-      <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">15–20%</span></div>
-      <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span class="fee-val">20–25%</span></div>
-      <div class="fee-row"><span class="fee-key">Storage + handling</span><span class="fee-val amber">₹2–4/unit/day</span></div>
-      <div class="fee-row"><span class="fee-key">Total effective deduction</span><span class="fee-val amber">~25–35%</span></div>
-      <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">15–21 days</span></div>
-      <div class="alert alert-amber" style="margin-top:.75rem;font-size:12px">
+
+      <!-- BLINKIT -->
+      <div class="platform-card">
+        <div class="platform-top">
+          <div>
+            <div class="platform-name">Blinkit</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">10–15 min quick delivery</div>
+          </div>
+          <span class="badge badge-green">Live in Bhavnagar</span>
+        </div>
+        <div class="platform-body">
+          <div class="bar-wrap">
+            <div class="bar-fill" style="width:32%"></div>
+          </div>
+          <div
+            style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
+            <span>Total effective cut</span><span>30–35% of selling price</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Commission (grocery & staples)</span><span
+              class="fee-val">10–12%</span></div>
+          <div class="fee-row"><span class="fee-key">Commission (personal care — Ubtan, Hair Oil)</span><span
+              class="fee-val">15–18%</span></div>
+          <div class="fee-row"><span class="fee-key">Commission (snacks — Popcorn, Pauva)</span><span
+              class="fee-val">12–15%</span></div>
+          <div class="fee-row"><span class="fee-key">GST on commission</span><span class="fee-val">18% on commission
+              amt</span></div>
+          <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
+          <div class="fee-row"><span class="fee-key">Storage / warehousing (dark store)</span><span
+              class="fee-val amber">₹2–5/unit/day</span></div>
+          <div class="fee-row"><span class="fee-key">Total effective deduction</span><span
+              class="fee-val amber">~30–35%</span></div>
+          <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">7–10 days</span></div>
+          <div class="alert alert-amber" style="margin-top:.75rem;font-size:12px">
+            <span class="alert-icon">⚠</span>
+            <span>Blinkit is a <strong>dark store / B2B supply model</strong> — you don't list and sell directly. You
+              supply inventory to their Bhavnagar dark store. They control visibility, pricing & placement. High volumes
+              preferred.</span>
+          </div>
+          <div class="best-for"><strong>Best for:</strong> Popcorn, Pauva, Ubtan — impulse-buy and convenience products.
+            Not ideal for bulk staples at this margin level.</div>
+        </div>
+      </div>
+
+      <!-- ZEPTO -->
+      <div class="platform-card">
+        <div class="platform-top">
+          <div>
+            <div class="platform-name">Zepto</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">10 min delivery</div>
+          </div>
+          <span class="badge badge-green">Live in Bhavnagar</span>
+        </div>
+        <div class="platform-body">
+          <div class="bar-wrap">
+            <div class="bar-fill" style="width:30%"></div>
+          </div>
+          <div
+            style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
+            <span>Commission range</span><span>15–22% + storage</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">15–18%</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span
+              class="fee-val">18–22%</span></div>
+          <div class="fee-row"><span class="fee-key">GST on commission</span><span class="fee-val">18% on commission
+              amt</span></div>
+          <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
+          <div class="fee-row"><span class="fee-key">Storage + handling (dark store)</span><span
+              class="fee-val amber">₹3–6/unit/day</span></div>
+          <div class="fee-row"><span class="fee-key">Total effective deduction</span><span
+              class="fee-val amber">~28–35%</span></div>
+          <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">10–14 days</span></div>
+          <div class="best-for"><strong>Best for:</strong> Hair oil, Ubtan, Popcorn — beauty and snack categories get
+            better placement on Zepto. Zepto take rate is rising (currently 22–23%).</div>
+        </div>
+      </div>
+
+      <!-- JIOMART -->
+      <div class="platform-card">
+        <div class="platform-top">
+          <div>
+            <div class="platform-name">JioMart</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">Reliance's grocery marketplace</div>
+          </div>
+          <span class="badge badge-green">Live in Bhavnagar</span>
+        </div>
+        <div class="platform-body">
+          <div class="bar-wrap">
+            <div class="bar-fill" style="width:18%"></div>
+          </div>
+          <div
+            style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
+            <span>Commission range</span><span>5–10% on grocery</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">5–8%</span></div>
+          <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span class="fee-val">8–10%</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
+          <div class="fee-row"><span class="fee-key">Logistics (if not self-shipped)</span><span
+              class="fee-val">₹30–60/order</span></div>
+          <div class="fee-row"><span class="fee-key">Total effective deduction</span><span
+              class="fee-val green">~12–18%</span></div>
+          <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">15 days</span></div>
+          <div class="best-for"><strong>Best for:</strong> Ubtan, Hair Oil — JioMart has strong Gujarat kirana-style
+            audience and good personal care demand. Also good for bulk Chana, Bajra, Rice.</div>
+        </div>
+      </div>
+
+      <!-- FLIPKART -->
+      <div class="platform-card">
+        <div class="platform-top">
+          <div>
+            <div class="platform-name">Flipkart Grocery</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">India's largest e-commerce grocery vertical
+            </div>
+          </div>
+          <span class="badge badge-green">Live in Bhavnagar</span>
+        </div>
+        <div class="platform-body">
+          <div class="bar-wrap">
+            <div class="bar-fill" style="width:20%"></div>
+          </div>
+          <div
+            style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:.75rem">
+            <span>Commission range</span><span>6–12% on grocery</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">6–10%</span></div>
+          <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span
+              class="fee-val">10–12%</span></div>
+          <div class="fee-row"><span class="fee-key">TCS</span><span class="fee-val">1%</span></div>
+          <div class="fee-row"><span class="fee-key">Logistics (Ekart)</span><span class="fee-val">₹40–80/order</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Total effective deduction</span><span
+              class="fee-val green">~13–20%</span></div>
+          <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">7–15 days</span></div>
+          <div class="best-for"><strong>Best for:</strong> Popcorn, Ravo, Pauva — packaged snack and ready-to-eat items
+            get good traction. Flipkart buyer base is very price-sensitive; keep prices competitive.</div>
+        </div>
+      </div>
+
+      <!-- SWIGGY INSTAMART -->
+      <div class="platform-card">
+        <div class="platform-top">
+          <div>
+            <div class="platform-name">Swiggy Instamart</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">15-min grocery delivery</div>
+          </div>
+          <span class="badge badge-amber">Check pin coverage</span>
+        </div>
+        <div class="platform-body">
+          <div class="fee-row"><span class="fee-key">Commission (grocery)</span><span class="fee-val">15–20%</span>
+          </div>
+          <div class="fee-row"><span class="fee-key">Commission (personal care)</span><span
+              class="fee-val">20–25%</span></div>
+          <div class="fee-row"><span class="fee-key">Storage + handling</span><span
+              class="fee-val amber">₹2–4/unit/day</span></div>
+          <div class="fee-row"><span class="fee-key">Total effective deduction</span><span
+              class="fee-val amber">~25–35%</span></div>
+          <div class="fee-row"><span class="fee-key">Payment cycle</span><span class="fee-val">15–21 days</span></div>
+          <div class="alert alert-amber" style="margin-top:.75rem;font-size:12px">
+            <span class="alert-icon">⚠</span>
+            <span>Instamart's Bhavnagar coverage varies by pincode. Verify at Swiggy's partner portal before investing
+              time in onboarding.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLATFORM SUMMARY TABLE -->
+      <div class="section-label">Commission comparison at a glance</div>
+      <div class="price-guide-card">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Grocery %</th>
+              <th>Personal Care %</th>
+              <th>Total Cut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amazon</strong></td>
+              <td><span class="badge badge-green">0–5%</span></td>
+              <td>7–12%</td>
+              <td style="color:var(--green);font-weight:600">8–15%</td>
+            </tr>
+            <tr>
+              <td><strong>JioMart</strong></td>
+              <td>5–8%</td>
+              <td>8–10%</td>
+              <td style="color:var(--green);font-weight:600">12–18%</td>
+            </tr>
+            <tr>
+              <td><strong>Flipkart</strong></td>
+              <td>6–10%</td>
+              <td>10–12%</td>
+              <td>13–20%</td>
+            </tr>
+            <tr>
+              <td><strong>Zepto</strong></td>
+              <td>15–18%</td>
+              <td>18–22%</td>
+              <td style="color:var(--amber);font-weight:600">28–35%</td>
+            </tr>
+            <tr>
+              <td><strong>Blinkit</strong></td>
+              <td>10–12%</td>
+              <td>15–18%</td>
+              <td style="color:var(--amber);font-weight:600">30–35%</td>
+            </tr>
+            <tr>
+              <td><strong>Swiggy</strong></td>
+              <td>15–20%</td>
+              <td>20–25%</td>
+              <td style="color:var(--amber);font-weight:600">25–35%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- end tab-platforms -->
+
+
+    <!-- ══════════ TAB 3: PRODUCTS & PRICING ══════════ -->
+    <div class="tab-section" id="tab-products">
+
+      <div class="alert alert-blue">
+        <span class="alert-icon">ℹ</span>
+        <span>Suggested selling prices are based on current Bhavnagar market rates, competitor analysis, and platform
+          margin requirements. Your client sets final prices — this is a starting guide.</span>
+      </div>
+
+      <div class="section-label">Product pricing guide</div>
+
+      <div class="price-guide-card">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Pack Size</th>
+              <th>Est. Cost</th>
+              <th>Suggested MRP</th>
+              <th>Min. Profit*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mag</strong> <span class="badge badge-green product-tag">Grocery</span></td>
+              <td>500g</td>
+              <td>₹60</td>
+              <td>₹120–150</td>
+              <td style="color:var(--green)">₹35–55</td>
+            </tr>
+            <tr>
+              <td><strong>Chana</strong> <span class="badge badge-green product-tag">Grocery</span></td>
+              <td>500g</td>
+              <td>₹70</td>
+              <td>₹130–160</td>
+              <td style="color:var(--green)">₹35–55</td>
+            </tr>
+            <tr>
+              <td><strong>Bajro</strong> <span class="badge badge-green product-tag">Grocery</span></td>
+              <td>500g</td>
+              <td>₹55</td>
+              <td>₹110–140</td>
+              <td style="color:var(--green)">₹30–50</td>
+            </tr>
+            <tr>
+              <td><strong>Juwar</strong> <span class="badge badge-green product-tag">Grocery</span></td>
+              <td>500g</td>
+              <td>₹55</td>
+              <td>₹110–140</td>
+              <td style="color:var(--green)">₹30–50</td>
+            </tr>
+            <tr>
+              <td><strong>Rice</strong> <span class="badge badge-green product-tag">Grocery</span></td>
+              <td>1 kg</td>
+              <td>₹80</td>
+              <td>₹150–200</td>
+              <td style="color:var(--green)">₹40–70</td>
+            </tr>
+            <tr>
+              <td><strong>Popcorn</strong> <span class="badge badge-blue product-tag">Snack</span></td>
+              <td>100g</td>
+              <td>₹40</td>
+              <td>₹90–120</td>
+              <td style="color:var(--green)">₹25–45</td>
+            </tr>
+            <tr>
+              <td><strong>Ravo</strong> <span class="badge badge-green product-tag">Grocery</span></td>
+              <td>500g</td>
+              <td>₹50</td>
+              <td>₹100–130</td>
+              <td style="color:var(--green)">₹25–45</td>
+            </tr>
+            <tr>
+              <td><strong>Pauva</strong> <span class="badge badge-green product-tag">Grocery</span></td>
+              <td>500g</td>
+              <td>₹55</td>
+              <td>₹110–140</td>
+              <td style="color:var(--green)">₹30–50</td>
+            </tr>
+            <tr>
+              <td><strong>Ubtan</strong> <span class="badge badge-accent product-tag">Personal Care</span></td>
+              <td>50g</td>
+              <td>₹80</td>
+              <td>₹220–300</td>
+              <td style="color:var(--green)">₹90–150</td>
+            </tr>
+            <tr>
+              <td><strong>Hair Oil</strong> <span class="badge badge-accent product-tag">Personal Care</span></td>
+              <td>100ml</td>
+              <td>₹100</td>
+              <td>₹250–350</td>
+              <td style="color:var(--green)">₹95–170</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="font-size:12px;color:var(--muted);margin-top:.5rem">*Minimum profit = selling price minus cost,
+        packaging (₹15), and Amazon-level commission (~15%). Use the Profit Calculator tab for per-platform breakdown.
+      </div>
+
+      <div class="section-label">Platform strategy by product type</div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+          <span class="badge badge-green">Grocery staples</span>
+          <span style="font-size:13px;color:var(--muted)">Mag, Chana, Bajro, Juwar, Rice, Ravo, Pauva</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Primary platform</span><span class="fee-val">Amazon Fresh (0% on
+            ≤₹300)</span></div>
+        <div class="fee-row"><span class="fee-key">Secondary</span><span class="fee-val">JioMart, Flipkart
+            Grocery</span></div>
+        <div class="fee-row"><span class="fee-key">Quick-commerce</span><span class="fee-val amber">Blinkit / Zepto
+            (margins thin)</span></div>
+        <div class="fee-row"><span class="fee-key">Pricing tip</span><span class="fee-val green">Keep below ₹300 on
+            Amazon</span></div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+          <span class="badge badge-accent">Personal care</span>
+          <span style="font-size:13px;color:var(--muted)">Ubtan, Hair Oil</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Primary platform</span><span class="fee-val">Amazon + JioMart</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Secondary</span><span class="fee-val">Zepto (beauty category
+            visibility)</span></div>
+        <div class="fee-row"><span class="fee-key">Pricing tip</span><span class="fee-val green">₹250–350 maintains 35%+
+            margin</span></div>
+        <div class="fee-row"><span class="fee-key">Content tip</span><span class="fee-val">Highlight natural/handmade
+            origin</span></div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+          <span class="badge badge-blue">Snacks & impulse</span>
+          <span style="font-size:13px;color:var(--muted)">Popcorn</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Primary platform</span><span class="fee-val">Flipkart Grocery,
+            Blinkit</span></div>
+        <div class="fee-row"><span class="fee-key">Secondary</span><span class="fee-val">Zepto, Amazon</span></div>
+        <div class="fee-row"><span class="fee-key">Pricing tip</span><span class="fee-val green">₹90–120 is the sweet
+            spot</span></div>
+        <div class="fee-row"><span class="fee-key">Blinkit tip</span><span class="fee-val">10-min delivery = impulse
+            buy</span></div>
+      </div>
+
+    </div><!-- end tab-products -->
+
+
+    <!-- ══════════ TAB 4: PROFIT CALCULATOR ══════════ -->
+    <div class="tab-section" id="tab-calculator">
+
+      <div class="calc-wrap">
+        <div class="form-group">
+          <label class="form-label">Select product</label>
+          <select id="calcProduct" onchange="calculate()">
+            <option value="mag,grocery">Mag (Millet flour)</option>
+            <option value="chana,grocery">Chana (Chickpeas)</option>
+            <option value="bajro,grocery">Bajro (Bajra flour)</option>
+            <option value="juwar,grocery">Juwar (Sorghum flour)</option>
+            <option value="rice,grocery">Rice (1 kg pack)</option>
+            <option value="popcorn,snack">Popcorn (100g pack)</option>
+            <option value="ravo,grocery">Ravo (Semolina)</option>
+            <option value="pauva,grocery">Pauva (Poha)</option>
+            <option value="ubtan,personal">Ubtan (50g)</option>
+            <option value="hairoil,personal">Hair Oil (100ml)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Platform</label>
+          <select id="calcPlatform" onchange="calculate()">
+            <option value="amazon">Amazon Fresh / Amazon.in</option>
+            <option value="jiomart">JioMart</option>
+            <option value="flipkart">Flipkart Grocery</option>
+            <option value="blinkit">Blinkit</option>
+            <option value="zepto">Zepto</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Selling price (₹)</label>
+          <input type="number" id="calcSP" value="200" min="50" max="2000" step="5" oninput="calculate()">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your product cost price (₹)</label>
+          <input type="number" id="calcCP" value="80" min="10" max="1500" step="5" oninput="calculate()">
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+          <label class="form-label">Packaging cost (₹)</label>
+          <input type="number" id="calcPK" value="15" min="5" max="100" step="5" oninput="calculate()">
+        </div>
+      </div>
+
+      <div class="calc-result" id="calcResult">
+        <!-- dynamically filled -->
+      </div>
+
+      <div class="alert alert-amber" style="margin-top:1rem">
         <span class="alert-icon">⚠</span>
-        <span>Instamart's Bhavnagar coverage varies by pincode. Verify at Swiggy's partner portal before investing time in onboarding.</span>
+        <span><strong>Rule of thumb:</strong> Always target minimum 25% net margin after all deductions. Anything below
+          15% net is dangerous — one damaged shipment or return order can wipe 3–4 orders of profit.</span>
       </div>
-    </div>
-  </div>
 
-  <!-- PLATFORM SUMMARY TABLE -->
-  <div class="section-label">Commission comparison at a glance</div>
-  <div class="price-guide-card">
-    <table class="product-table">
-      <thead>
-        <tr>
-          <th>Platform</th>
-          <th>Grocery %</th>
-          <th>Personal Care %</th>
-          <th>Total Cut</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Amazon</strong></td>
-          <td><span class="badge badge-green">0–5%</span></td>
-          <td>7–12%</td>
-          <td style="color:var(--green);font-weight:600">8–15%</td>
-        </tr>
-        <tr>
-          <td><strong>JioMart</strong></td>
-          <td>5–8%</td>
-          <td>8–10%</td>
-          <td style="color:var(--green);font-weight:600">12–18%</td>
-        </tr>
-        <tr>
-          <td><strong>Flipkart</strong></td>
-          <td>6–10%</td>
-          <td>10–12%</td>
-          <td>13–20%</td>
-        </tr>
-        <tr>
-          <td><strong>Zepto</strong></td>
-          <td>15–18%</td>
-          <td>18–22%</td>
-          <td style="color:var(--amber);font-weight:600">28–35%</td>
-        </tr>
-        <tr>
-          <td><strong>Blinkit</strong></td>
-          <td>10–12%</td>
-          <td>15–18%</td>
-          <td style="color:var(--amber);font-weight:600">30–35%</td>
-        </tr>
-        <tr>
-          <td><strong>Swiggy</strong></td>
-          <td>15–20%</td>
-          <td>20–25%</td>
-          <td style="color:var(--amber);font-weight:600">25–35%</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-</div><!-- end tab-platforms -->
+    </div><!-- end tab-calculator -->
 
 
-<!-- ══════════ TAB 3: PRODUCTS & PRICING ══════════ -->
-<div class="tab-section" id="tab-products">
+    <!-- ══════════ TAB 5: DOCUMENTS NEEDED ══════════ -->
+    <div class="tab-section" id="tab-docs">
 
-  <div class="alert alert-blue">
-    <span class="alert-icon">ℹ</span>
-    <span>Suggested selling prices are based on current Bhavnagar market rates, competitor analysis, and platform margin requirements. Your client sets final prices — this is a starting guide.</span>
-  </div>
+      <div class="section-label">Mandatory registrations (client's responsibility)</div>
 
-  <div class="section-label">Product pricing guide</div>
-
-  <div class="price-guide-card">
-    <table class="product-table">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Pack Size</th>
-          <th>Est. Cost</th>
-          <th>Suggested MRP</th>
-          <th>Min. Profit*</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Mag</strong> <span class="badge badge-green product-tag">Grocery</span></td>
-          <td>500g</td>
-          <td>₹60</td>
-          <td>₹120–150</td>
-          <td style="color:var(--green)">₹35–55</td>
-        </tr>
-        <tr>
-          <td><strong>Chana</strong> <span class="badge badge-green product-tag">Grocery</span></td>
-          <td>500g</td>
-          <td>₹70</td>
-          <td>₹130–160</td>
-          <td style="color:var(--green)">₹35–55</td>
-        </tr>
-        <tr>
-          <td><strong>Bajro</strong> <span class="badge badge-green product-tag">Grocery</span></td>
-          <td>500g</td>
-          <td>₹55</td>
-          <td>₹110–140</td>
-          <td style="color:var(--green)">₹30–50</td>
-        </tr>
-        <tr>
-          <td><strong>Juwar</strong> <span class="badge badge-green product-tag">Grocery</span></td>
-          <td>500g</td>
-          <td>₹55</td>
-          <td>₹110–140</td>
-          <td style="color:var(--green)">₹30–50</td>
-        </tr>
-        <tr>
-          <td><strong>Rice</strong> <span class="badge badge-green product-tag">Grocery</span></td>
-          <td>1 kg</td>
-          <td>₹80</td>
-          <td>₹150–200</td>
-          <td style="color:var(--green)">₹40–70</td>
-        </tr>
-        <tr>
-          <td><strong>Popcorn</strong> <span class="badge badge-blue product-tag">Snack</span></td>
-          <td>100g</td>
-          <td>₹40</td>
-          <td>₹90–120</td>
-          <td style="color:var(--green)">₹25–45</td>
-        </tr>
-        <tr>
-          <td><strong>Ravo</strong> <span class="badge badge-green product-tag">Grocery</span></td>
-          <td>500g</td>
-          <td>₹50</td>
-          <td>₹100–130</td>
-          <td style="color:var(--green)">₹25–45</td>
-        </tr>
-        <tr>
-          <td><strong>Pauva</strong> <span class="badge badge-green product-tag">Grocery</span></td>
-          <td>500g</td>
-          <td>₹55</td>
-          <td>₹110–140</td>
-          <td style="color:var(--green)">₹30–50</td>
-        </tr>
-        <tr>
-          <td><strong>Ubtan</strong> <span class="badge badge-accent product-tag">Personal Care</span></td>
-          <td>50g</td>
-          <td>₹80</td>
-          <td>₹220–300</td>
-          <td style="color:var(--green)">₹90–150</td>
-        </tr>
-        <tr>
-          <td><strong>Hair Oil</strong> <span class="badge badge-accent product-tag">Personal Care</span></td>
-          <td>100ml</td>
-          <td>₹100</td>
-          <td>₹250–350</td>
-          <td style="color:var(--green)">₹95–170</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div style="font-size:12px;color:var(--muted);margin-top:.5rem">*Minimum profit = selling price minus cost, packaging (₹15), and Amazon-level commission (~15%). Use the Profit Calculator tab for per-platform breakdown.</div>
-
-  <div class="section-label">Platform strategy by product type</div>
-
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
-      <span class="badge badge-green">Grocery staples</span>
-      <span style="font-size:13px;color:var(--muted)">Mag, Chana, Bajro, Juwar, Rice, Ravo, Pauva</span>
-    </div>
-    <div class="fee-row"><span class="fee-key">Primary platform</span><span class="fee-val">Amazon Fresh (0% on ≤₹300)</span></div>
-    <div class="fee-row"><span class="fee-key">Secondary</span><span class="fee-val">JioMart, Flipkart Grocery</span></div>
-    <div class="fee-row"><span class="fee-key">Quick-commerce</span><span class="fee-val amber">Blinkit / Zepto (margins thin)</span></div>
-    <div class="fee-row"><span class="fee-key">Pricing tip</span><span class="fee-val green">Keep below ₹300 on Amazon</span></div>
-  </div>
-
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
-      <span class="badge badge-accent">Personal care</span>
-      <span style="font-size:13px;color:var(--muted)">Ubtan, Hair Oil</span>
-    </div>
-    <div class="fee-row"><span class="fee-key">Primary platform</span><span class="fee-val">Amazon + JioMart</span></div>
-    <div class="fee-row"><span class="fee-key">Secondary</span><span class="fee-val">Zepto (beauty category visibility)</span></div>
-    <div class="fee-row"><span class="fee-key">Pricing tip</span><span class="fee-val green">₹250–350 maintains 35%+ margin</span></div>
-    <div class="fee-row"><span class="fee-key">Content tip</span><span class="fee-val">Highlight natural/handmade origin</span></div>
-  </div>
-
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
-      <span class="badge badge-blue">Snacks & impulse</span>
-      <span style="font-size:13px;color:var(--muted)">Popcorn</span>
-    </div>
-    <div class="fee-row"><span class="fee-key">Primary platform</span><span class="fee-val">Flipkart Grocery, Blinkit</span></div>
-    <div class="fee-row"><span class="fee-key">Secondary</span><span class="fee-val">Zepto, Amazon</span></div>
-    <div class="fee-row"><span class="fee-key">Pricing tip</span><span class="fee-val green">₹90–120 is the sweet spot</span></div>
-    <div class="fee-row"><span class="fee-key">Blinkit tip</span><span class="fee-val">10-min delivery = impulse buy</span></div>
-  </div>
-
-</div><!-- end tab-products -->
-
-
-<!-- ══════════ TAB 4: PROFIT CALCULATOR ══════════ -->
-<div class="tab-section" id="tab-calculator">
-
-  <div class="calc-wrap">
-    <div class="form-group">
-      <label class="form-label">Select product</label>
-      <select id="calcProduct" onchange="calculate()">
-        <option value="mag,grocery">Mag (Millet flour)</option>
-        <option value="chana,grocery">Chana (Chickpeas)</option>
-        <option value="bajro,grocery">Bajro (Bajra flour)</option>
-        <option value="juwar,grocery">Juwar (Sorghum flour)</option>
-        <option value="rice,grocery">Rice (1 kg pack)</option>
-        <option value="popcorn,snack">Popcorn (100g pack)</option>
-        <option value="ravo,grocery">Ravo (Semolina)</option>
-        <option value="pauva,grocery">Pauva (Poha)</option>
-        <option value="ubtan,personal">Ubtan (50g)</option>
-        <option value="hairoil,personal">Hair Oil (100ml)</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Platform</label>
-      <select id="calcPlatform" onchange="calculate()">
-        <option value="amazon">Amazon Fresh / Amazon.in</option>
-        <option value="jiomart">JioMart</option>
-        <option value="flipkart">Flipkart Grocery</option>
-        <option value="blinkit">Blinkit</option>
-        <option value="zepto">Zepto</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Selling price (₹)</label>
-      <input type="number" id="calcSP" value="200" min="50" max="2000" step="5" oninput="calculate()">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Your product cost price (₹)</label>
-      <input type="number" id="calcCP" value="80" min="10" max="1500" step="5" oninput="calculate()">
-    </div>
-    <div class="form-group" style="margin-bottom:0">
-      <label class="form-label">Packaging cost (₹)</label>
-      <input type="number" id="calcPK" value="15" min="5" max="100" step="5" oninput="calculate()">
-    </div>
-  </div>
-
-  <div class="calc-result" id="calcResult">
-    <!-- dynamically filled -->
-  </div>
-
-  <div class="alert alert-amber" style="margin-top:1rem">
-    <span class="alert-icon">⚠</span>
-    <span><strong>Rule of thumb:</strong> Always target minimum 25% net margin after all deductions. Anything below 15% net is dangerous — one damaged shipment or return order can wipe 3–4 orders of profit.</span>
-  </div>
-
-</div><!-- end tab-calculator -->
-
-
-<!-- ══════════ TAB 5: DOCUMENTS NEEDED ══════════ -->
-<div class="tab-section" id="tab-docs">
-
-  <div class="section-label">Mandatory registrations (client's responsibility)</div>
-
-  <div class="card">
-    <div class="plan-header" style="margin-bottom:.75rem">
-      <div>
-        <div class="plan-name" style="font-size:15px">FSSAI Registration</div>
-        <div class="plan-tagline">Food Safety & Standards Authority of India</div>
+      <div class="card">
+        <div class="plan-header" style="margin-bottom:.75rem">
+          <div>
+            <div class="plan-name" style="font-size:15px">FSSAI Registration</div>
+            <div class="plan-tagline">Food Safety & Standards Authority of India</div>
+          </div>
+          <span class="badge badge-amber">Mandatory</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Required for</span><span class="fee-val">ALL food products (all 8
+            grocery items)</span></div>
+        <div class="fee-row"><span class="fee-key">Type</span><span class="fee-val">Basic / State license (based on
+            turnover)</span></div>
+        <div class="fee-row"><span class="fee-key">Govt. fee</span><span class="fee-val">₹100–2,000 depending on
+            type</span></div>
+        <div class="fee-row"><span class="fee-key">Time to get</span><span class="fee-val amber">15–30 days</span></div>
+        <div class="fee-row"><span class="fee-key">Apply at</span><span class="fee-val">foscos.fssai.gov.in</span></div>
+        <div class="alert alert-amber" style="margin-top:.75rem;font-size:12px">
+          <span class="alert-icon">⚠</span>
+          <span>Without FSSAI, Amazon, Blinkit, and all other platforms will reject food product listings. Apply
+            immediately — it is the longest step in the entire setup.</span>
+        </div>
       </div>
-      <span class="badge badge-amber">Mandatory</span>
-    </div>
-    <div class="fee-row"><span class="fee-key">Required for</span><span class="fee-val">ALL food products (all 8 grocery items)</span></div>
-    <div class="fee-row"><span class="fee-key">Type</span><span class="fee-val">Basic / State license (based on turnover)</span></div>
-    <div class="fee-row"><span class="fee-key">Govt. fee</span><span class="fee-val">₹100–2,000 depending on type</span></div>
-    <div class="fee-row"><span class="fee-key">Time to get</span><span class="fee-val amber">15–30 days</span></div>
-    <div class="fee-row"><span class="fee-key">Apply at</span><span class="fee-val">foscos.fssai.gov.in</span></div>
-    <div class="alert alert-amber" style="margin-top:.75rem;font-size:12px">
-      <span class="alert-icon">⚠</span>
-      <span>Without FSSAI, Amazon, Blinkit, and all other platforms will reject food product listings. Apply immediately — it is the longest step in the entire setup.</span>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="plan-header" style="margin-bottom:.75rem">
-      <div>
-        <div class="plan-name" style="font-size:15px">GST Registration</div>
-        <div class="plan-tagline">Goods & Services Tax</div>
+      <div class="card">
+        <div class="plan-header" style="margin-bottom:.75rem">
+          <div>
+            <div class="plan-name" style="font-size:15px">GST Registration</div>
+            <div class="plan-tagline">Goods & Services Tax</div>
+          </div>
+          <span class="badge badge-amber">Mandatory</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Required for</span><span class="fee-val">All e-commerce sellers in
+            India</span></div>
+        <div class="fee-row"><span class="fee-key">Threshold</span><span class="fee-val">Mandatory regardless of
+            turnover for e-com</span></div>
+        <div class="fee-row"><span class="fee-key">Govt. fee</span><span class="fee-val green">Free</span></div>
+        <div class="fee-row"><span class="fee-key">Time to get</span><span class="fee-val">5–10 working days</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">GST rate on food</span><span class="fee-val">0–5% (most staples =
+            0%)</span></div>
+        <div class="fee-row"><span class="fee-key">GST rate on personal care</span><span class="fee-val">12–18%</span>
+        </div>
       </div>
-      <span class="badge badge-amber">Mandatory</span>
-    </div>
-    <div class="fee-row"><span class="fee-key">Required for</span><span class="fee-val">All e-commerce sellers in India</span></div>
-    <div class="fee-row"><span class="fee-key">Threshold</span><span class="fee-val">Mandatory regardless of turnover for e-com</span></div>
-    <div class="fee-row"><span class="fee-key">Govt. fee</span><span class="fee-val green">Free</span></div>
-    <div class="fee-row"><span class="fee-key">Time to get</span><span class="fee-val">5–10 working days</span></div>
-    <div class="fee-row"><span class="fee-key">GST rate on food</span><span class="fee-val">0–5% (most staples = 0%)</span></div>
-    <div class="fee-row"><span class="fee-key">GST rate on personal care</span><span class="fee-val">12–18%</span></div>
-  </div>
 
-  <div class="card">
-    <div class="plan-header" style="margin-bottom:.75rem">
-      <div>
-        <div class="plan-name" style="font-size:15px">Business Bank Account</div>
-        <div class="plan-tagline">Current account for receiving platform payouts</div>
+      <div class="card">
+        <div class="plan-header" style="margin-bottom:.75rem">
+          <div>
+            <div class="plan-name" style="font-size:15px">Business Bank Account</div>
+            <div class="plan-tagline">Current account for receiving platform payouts</div>
+          </div>
+          <span class="badge badge-amber">Mandatory</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Type</span><span class="fee-val">Current account (not savings)</span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Documents</span><span class="fee-val">PAN card + GST + address
+            proof</span></div>
+        <div class="alert alert-blue" style="margin-top:.75rem;font-size:12px">
+          <span class="alert-icon">ℹ</span>
+          <span>All platform payouts go to a current account linked to your GST. Savings account may cause payment
+            delays or TDS complications.</span>
+        </div>
       </div>
-      <span class="badge badge-amber">Mandatory</span>
-    </div>
-    <div class="fee-row"><span class="fee-key">Type</span><span class="fee-val">Current account (not savings)</span></div>
-    <div class="fee-row"><span class="fee-key">Documents</span><span class="fee-val">PAN card + GST + address proof</span></div>
-    <div class="alert alert-blue" style="margin-top:.75rem;font-size:12px">
-      <span class="alert-icon">ℹ</span>
-      <span>All platform payouts go to a current account linked to your GST. Savings account may cause payment delays or TDS complications.</span>
-    </div>
+      <div class="card">
+        <div class="plan-header" style="margin-bottom:.75rem">
+          <div>
+            <div class="plan-name" style="font-size:15px">VEG MARK</div>
+          </div>
+          <span class="badge badge-amber">Mandatory</span>
+        </div>
+      </div>
+
+      <div class="section-label">Documents checklist</div>
+      <div class="price-guide-card">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Document</th>
+              <th>Status</th>
+              <th>For Platform</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Aadhaar Card</td>
+              <td><span class="badge badge-green">Usually ready</span></td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>PAN Card</td>
+              <td><span class="badge badge-green">Usually ready</span></td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>GST Certificate</td>
+              <td><span class="badge badge-amber">Apply if pending</span></td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>FSSAI License</td>
+              <td><span class="badge badge-amber">Apply now</span></td>
+              <td>All (food items)</td>
+            </tr>
+            <tr>
+              <td>Current Bank Account</td>
+              <td><span class="badge badge-amber">Open if needed</span></td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>Business Address Proof</td>
+              <td><span class="badge badge-green">Utility bill OK</span></td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>Cancelled Cheque / Bank statement</td>
+              <td><span class="badge badge-green">From bank</span></td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>Product images (marketplace-ready)</td>
+              <td><span class="badge badge-accent">Vedhaan provides</span></td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <td>VEG MARK</td>
+              <td><span class="badge badge-accent">Apply if pending</span></td>
+              <td>All</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-label">Estimated timeline from today</div>
+      <div class="card dark">
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 1</span>
+          <span style="color:var(--white);font-size:13px;font-weight:500">Apply FSSAI + GST + open bank account</span>
+        </div>
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 2</span>
+          <span style="color:var(--white);font-size:13px;font-weight:500">Product photoshoot at Vedhaan studio</span>
+        </div>
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 3</span>
+          <span style="color:var(--white);font-size:13px;font-weight:500">FSSAI approved → Platform registrations
+            begin</span>
+        </div>
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 4</span>
+          <span style="color:var(--white);font-size:13px;font-weight:500">Listings go live — Amazon + JioMart
+            first</span>
+        </div>
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1);border-bottom:none">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 5–6</span>
+          <span style="color:var(--accent);font-size:13px;font-weight:500">Blinkit + Zepto + Flipkart go live 🚀</span>
+        </div>
+      </div>
+
+    </div><!-- end tab-docs -->
+
+
+    <!-- ══════════ TAB 6: OWN STORE ══════════ -->
+    <div class="tab-section" id="tab-ownstore">
+
+      <div class="alert alert-blue">
+        <span class="alert-icon">ℹ</span>
+        <span>Having your own store means <strong>no commission cuts, no platform rules, full brand control</strong>.
+          Marketplaces bring traffic — your own store builds a brand that lasts. Both together is the ideal
+          setup.</span>
+      </div>
+
+      <!-- ── WHY OWN STORE ── -->
+      <div class="section-label">Marketplace vs own store — key difference</div>
+      <div class="price-guide-card">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th style="text-align:center">Marketplace</th>
+              <th style="text-align:center">Own Store</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Commission per order</td>
+              <td style="text-align:center;color:var(--red)">8–35%</td>
+              <td style="text-align:center;color:var(--green);font-weight:600">0%</td>
+            </tr>
+            <tr>
+              <td>Brand identity</td>
+              <td style="text-align:center">Minimal</td>
+              <td style="text-align:center;color:var(--green);font-weight:600">Full control</td>
+            </tr>
+            <tr>
+              <td>Customer data / repeat buyers</td>
+              <td style="text-align:center">Platform owns it</td>
+              <td style="text-align:center;color:var(--green);font-weight:600">You own it</td>
+            </tr>
+            <tr>
+              <td>Pricing control</td>
+              <td style="text-align:center">Limited</td>
+              <td style="text-align:center;color:var(--green);font-weight:600">Complete</td>
+            </tr>
+            <tr>
+              <td>Initial traffic</td>
+              <td style="text-align:center;color:var(--green)">Built-in</td>
+              <td style="text-align:center;color:var(--amber)">You build it</td>
+            </tr>
+            <tr>
+              <td>Setup effort</td>
+              <td style="text-align:center">Low</td>
+              <td style="text-align:center">Medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── PLAN S: SHOPIFY ── -->
+      <div class="section-label">Plan S — Shopify store</div>
+      <div class="card featured">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Shopify Store</div>
+            <div class="plan-tagline">Fastest launch · Easiest to manage · Lower maintenance</div>
+          </div>
+          <span class="badge badge-green">Recommended</span>
+        </div>
+
+        <!-- One time -->
+        <div class="section-label" style="margin-top:.25rem">One-Time Setup Cost</div>
+        <div class="price-block">
+          <div class="pb-label">Store design & development<br><span style="font-size:11px;color:#aaa">Custom theme
+              setup, homepage, product pages, cart, checkout — mobile-first</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹12,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">10 product listings with content<br><span style="font-size:11px;color:#aaa">Titles,
+              descriptions, images upload, variants</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹2,500</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Razorpay payment gateway integration<br><span style="font-size:11px;color:#aaa">Setup +
+              test transactions + webhook config</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹1,500</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">WhatsApp order notification setup<br><span style="font-size:11px;color:#aaa">Auto
+              WhatsApp message on every new order</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹1,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Domain connection + SSL + basic SEO<br><span style="font-size:11px;color:#aaa">Domain
+              purchase is client's expense (~₹800/yr)</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹500</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Total Setup (one-time)</div>
+          <div class="total-val">₹17,500</div>
+        </div>
+
+        <!-- Monthly -->
+        <div class="section-label">Monthly Cost Breakdown</div>
+        <div class="price-block">
+          <div class="pb-label">Shopify subscription (Basic plan)<br><span style="font-size:11px;color:#aaa">Paid
+              directly by client to Shopify — ~$29/mo</span></div>
+          <div class="pb-right">
+            <div class="pb-val">~₹2,400/mo</div>
+            <div class="pb-note">Client pays Shopify directly</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Vedhaan management retainer<br><span style="font-size:11px;color:#aaa">Product updates,
+              order support, content changes, minor fixes</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹2,000/mo</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Razorpay transaction fee<br><span style="font-size:11px;color:#aaa">Per order — paid to
+              Razorpay, not Vedhaan</span></div>
+          <div class="pb-right">
+            <div class="pb-val">2% per order</div>
+            <div class="pb-note">On ₹200 order = ₹4 fee</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Total Monthly (approx.)</div>
+          <div class="total-val">₹4,400/mo</div>
+        </div>
+
+        <!-- Shopify pros -->
+        <div class="section-label">Why Shopify suits this client</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.5rem">
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            No coding knowledge needed to add products</div>
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            Built-in inventory management</div>
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            App store for future features (COD, loyalty, etc.)</div>
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            Uptime & security handled by Shopify</div>
+          <div style="background:var(--amber-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--amber)">⚠
+            Monthly Shopify fee is recurring forever</div>
+          <div style="background:var(--amber-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--amber)">⚠
+            Limited customisation vs custom dev</div>
+        </div>
+      </div>
+
+      <!-- ── PLAN C: CUSTOM ── -->
+      <div class="section-label">Plan C — Custom development</div>
+      <div class="card">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Custom E-Commerce Website</div>
+            <div class="plan-tagline">Full ownership · No monthly platform fee · More flexibility</div>
+          </div>
+          <span class="badge badge-blue">Advanced</span>
+        </div>
+
+        <!-- One time -->
+        <div class="section-label" style="margin-top:.25rem">One-Time Development Cost</div>
+        <div class="price-block">
+          <div class="pb-label">Full-stack e-commerce development<br><span style="font-size:11px;color:#aaa">React +
+              Node.js / PHP, product pages, cart, checkout, admin panel</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹30,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Custom admin dashboard<br><span style="font-size:11px;color:#aaa">Add/edit products,
+              view orders, manage inventory — no third-party tools needed</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹8,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Razorpay / Paytm payment integration</div>
+          <div class="pb-right">
+            <div class="pb-val">₹2,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">WhatsApp order notification (API)</div>
+          <div class="pb-right">
+            <div class="pb-val">₹1,500</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">10 product listings + content upload</div>
+          <div class="pb-right">
+            <div class="pb-val">₹2,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Domain + hosting setup + SSL<br><span style="font-size:11px;color:#aaa">Hosting & domain
+              are client's annual expense</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹1,000</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Total Setup (one-time)</div>
+          <div class="total-val">₹44,500</div>
+        </div>
+
+        <!-- Monthly -->
+        <div class="section-label">Monthly Cost Breakdown</div>
+        <div class="price-block">
+          <div class="pb-label">Hosting (VPS / shared)<br><span style="font-size:11px;color:#aaa">Paid directly by
+              client — Hostinger/DigitalOcean</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹500–1,500/mo</div>
+            <div class="pb-note">Client pays directly</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Vedhaan maintenance retainer<br><span style="font-size:11px;color:#aaa">Bug fixes,
+              security patches, server updates, product management, order support</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹4,000/mo</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Razorpay transaction fee</div>
+          <div class="pb-right">
+            <div class="pb-val">2% per order</div>
+            <div class="pb-note">Same as Shopify</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Emergency / out-of-scope fixes<br><span style="font-size:11px;color:#aaa">Major feature
+              requests, server crashes, DB issues</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹800–2,000</div>
+            <div class="pb-note">As and when needed</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Total Monthly (approx.)</div>
+          <div class="total-val">₹5,500–6,500/mo</div>
+        </div>
+
+        <!-- Custom pros -->
+        <div class="section-label">Why custom costs more to maintain</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.5rem">
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            No Shopify fee — you own the code</div>
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            100% custom features — anything is possible</div>
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            Better long-term ROI at high order volumes</div>
+          <div style="background:var(--green-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--green)">✅
+            No dependency on third-party platforms</div>
+          <div style="background:var(--red-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--red)">❌
+            Higher setup cost upfront</div>
+          <div style="background:var(--red-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--red)">❌
+            Higher monthly maintenance (Vedhaan must manage everything)</div>
+          <div style="background:var(--red-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--red)">❌
+            Server, security, backups = Vedhaan's job</div>
+          <div style="background:var(--red-bg);border-radius:10px;padding:.7rem;font-size:12px;color:var(--red)">❌
+            Longer build time — 4–6 weeks vs 1–2 weeks</div>
+        </div>
+      </div>
+
+      <!-- ── SIDE BY SIDE COMPARISON ── -->
+      <div class="section-label">Plan comparison — Shopify vs Custom</div>
+      <div class="price-guide-card">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th style="text-align:center">Shopify</th>
+              <th style="text-align:center">Custom Dev</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Setup cost (one-time)</td>
+              <td style="text-align:center;color:var(--green);font-weight:600">₹17,500</td>
+              <td style="text-align:center;color:var(--amber);font-weight:600">₹44,500</td>
+            </tr>
+            <tr>
+              <td>Platform fee (monthly)</td>
+              <td style="text-align:center;color:var(--amber)">~₹2,400/mo (Shopify)</td>
+              <td style="text-align:center;color:var(--green)">₹500–1,500 (hosting only)</td>
+            </tr>
+            <tr>
+              <td>Vedhaan retainer (monthly)</td>
+              <td style="text-align:center;color:var(--green);font-weight:600">₹2,000/mo</td>
+              <td style="text-align:center;color:var(--amber);font-weight:600">₹4,000/mo</td>
+            </tr>
+            <tr>
+              <td>Total monthly spend (approx.)</td>
+              <td style="text-align:center;font-weight:600">₹4,400/mo</td>
+              <td style="text-align:center;font-weight:600">₹5,500–6,500/mo</td>
+            </tr>
+            <tr>
+              <td>Launch timeline</td>
+              <td style="text-align:center;color:var(--green)">1–2 weeks</td>
+              <td style="text-align:center;color:var(--amber)">4–6 weeks</td>
+            </tr>
+            <tr>
+              <td>Maintenance complexity</td>
+              <td style="text-align:center;color:var(--green)">Low</td>
+              <td style="text-align:center;color:var(--amber)">High</td>
+            </tr>
+            <tr>
+              <td>Customisation ceiling</td>
+              <td style="text-align:center">Medium</td>
+              <td style="text-align:center;color:var(--green)">Unlimited</td>
+            </tr>
+            <tr>
+              <td>Code ownership</td>
+              <td style="text-align:center;color:var(--amber)">Shopify's platform</td>
+              <td style="text-align:center;color:var(--green)">Client owns everything</td>
+            </tr>
+            <tr>
+              <td>Commission per order</td>
+              <td style="text-align:center;color:var(--green)">0% (+ 2% Razorpay)</td>
+              <td style="text-align:center;color:var(--green)">0% (+ 2% Razorpay)</td>
+            </tr>
+            <tr>
+              <td>Break-even vs marketplace</td>
+              <td style="text-align:center;color:var(--green)">~3–4 months</td>
+              <td style="text-align:center;color:var(--amber)">~8–10 months</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── RECOMMENDATION ── -->
+      <div class="section-label">Our recommendation</div>
+      <div class="card dark">
+        <div
+          style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase">
+          Vedhaan's honest take</div>
+        <div
+          style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:.75rem;line-height:1.3">
+          Start with Shopify.<br>Scale to custom when ready.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:1rem">
+          For a first-time online store, Shopify gets her selling in 1–2 weeks with the least risk. The ₹2,400/mo
+          Shopify fee is far cheaper than the extra ₹2,000/mo maintenance cost of custom development at this
+          stage.<br><br>
+          Once she's doing consistent 50+ orders/month and wants features beyond what Shopify offers, we migrate to
+          custom. At that point the revenue justifies the investment.
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div style="background:rgba(201,122,42,0.15);border-radius:10px;padding:.75rem;text-align:center">
+            <div style="font-size:11px;color:var(--accent);margin-bottom:4px">Phase 1 — Now</div>
+            <div style="font-size:14px;font-weight:600;color:var(--white)">Shopify Store</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.4)">₹17,500 setup</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:.75rem;text-align:center">
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:4px">Phase 2 — 6–12 months</div>
+            <div style="font-size:14px;font-weight:600;color:var(--white)">Custom Website</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.4)">When volume justifies</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ANNUAL COST VIEW ── -->
+      <div class="section-label">Annual cost view (Year 1)</div>
+      <div class="card">
+        <div class="fee-row">
+          <span class="fee-key" style="font-weight:600">Shopify — total Year 1 spend</span>
+          <span class="fee-val"></span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Setup (one-time)</span><span class="fee-val">₹17,500</span></div>
+        <div class="fee-row"><span class="fee-key">Shopify subscription (12 months)</span><span
+            class="fee-val">₹28,800</span></div>
+        <div class="fee-row"><span class="fee-key">Vedhaan retainer (12 months)</span><span
+            class="fee-val">₹24,000</span></div>
+        <div class="fee-row"><span class="fee-key">Domain (~₹800/yr)</span><span class="fee-val">₹800</span></div>
+        <div class="total-row" style="margin-top:.5rem">
+          <div class="total-label">Shopify Year 1 Total</div>
+          <div class="total-val">₹71,100</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="fee-row">
+          <span class="fee-key" style="font-weight:600">Custom Dev — total Year 1 spend</span>
+          <span class="fee-val"></span>
+        </div>
+        <div class="fee-row"><span class="fee-key">Setup (one-time)</span><span class="fee-val">₹44,500</span></div>
+        <div class="fee-row"><span class="fee-key">Hosting (12 months @ ₹1,000 avg.)</span><span
+            class="fee-val">₹12,000</span></div>
+        <div class="fee-row"><span class="fee-key">Vedhaan retainer (12 months @ ₹4,000)</span><span
+            class="fee-val">₹48,000</span></div>
+        <div class="fee-row"><span class="fee-key">Domain (~₹800/yr)</span><span class="fee-val">₹800</span></div>
+        <div class="total-row" style="margin-top:.5rem">
+          <div class="total-label">Custom Dev Year 1 Total</div>
+          <div class="total-val">₹1,05,300</div>
+        </div>
+      </div>
+
+      <div class="alert alert-amber">
+        <span class="alert-icon">⚠</span>
+        <span>These are <strong>Vedhaan's service charges only</strong>. Payment gateway fee (2% per Razorpay
+          transaction), any paid Shopify apps, and marketing/ad spend are separate and depend on actual usage.</span>
+      </div>
+
+    </div><!-- end tab-ownstore -->
+
+  </div><!-- end .content -->
+
+  <!-- FOOTER -->
+  <div class="footer-note">
+    <strong>Prepared by Vedhaan Technology</strong><br>
+    Bhavnagar, Gujarat · vedhaan.com<br><br>
+    This document is confidential and prepared specifically for your client.<br>
+    Prices are indicative based on market research as of May 2026.<br>
+    Platform commission rates may change — always verify on official seller portals before finalizing pricing.
   </div>
 
-  <div class="section-label">Documents checklist</div>
-  <div class="price-guide-card">
-    <table class="product-table">
-      <thead>
-        <tr>
-          <th>Document</th>
-          <th>Status</th>
-          <th>For Platform</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Aadhaar Card</td><td><span class="badge badge-green">Usually ready</span></td><td>All</td></tr>
-        <tr><td>PAN Card</td><td><span class="badge badge-green">Usually ready</span></td><td>All</td></tr>
-        <tr><td>GST Certificate</td><td><span class="badge badge-amber">Apply if pending</span></td><td>All</td></tr>
-        <tr><td>FSSAI License</td><td><span class="badge badge-amber">Apply now</span></td><td>All (food items)</td></tr>
-        <tr><td>Current Bank Account</td><td><span class="badge badge-amber">Open if needed</span></td><td>All</td></tr>
-        <tr><td>Business Address Proof</td><td><span class="badge badge-green">Utility bill OK</span></td><td>All</td></tr>
-        <tr><td>Cancelled Cheque / Bank statement</td><td><span class="badge badge-green">From bank</span></td><td>All</td></tr>
-        <tr><td>Product images (marketplace-ready)</td><td><span class="badge badge-accent">Vedhaan provides</span></td><td>All</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <script>
+    function showTab(id, btn) {
+      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      btn.classList.add('active');
+      window.scrollTo({ top: 0 });
+    }
 
-  <div class="section-label">Estimated timeline from today</div>
-  <div class="card dark">
-    <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
-      <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 1</span>
-      <span style="color:var(--white);font-size:13px;font-weight:500">Apply FSSAI + GST + open bank account</span>
-    </div>
-    <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
-      <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 2</span>
-      <span style="color:var(--white);font-size:13px;font-weight:500">Product photoshoot at Vedhaan studio</span>
-    </div>
-    <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
-      <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 3</span>
-      <span style="color:var(--white);font-size:13px;font-weight:500">FSSAI approved → Platform registrations begin</span>
-    </div>
-    <div class="fee-row" style="border-color:rgba(255,255,255,0.1)">
-      <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 4</span>
-      <span style="color:var(--white);font-size:13px;font-weight:500">Listings go live — Amazon + JioMart first</span>
-    </div>
-    <div class="fee-row" style="border-color:rgba(255,255,255,0.1);border-bottom:none">
-      <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 5–6</span>
-      <span style="color:var(--accent);font-size:13px;font-weight:500">Blinkit + Zepto + Flipkart go live 🚀</span>
-    </div>
-  </div>
+    const PLATFORMS = {
+      amazon: { name: 'Amazon Fresh', gComm: 5, pComm: 9, sComm: 3, tcs: 1, gstC: 18, closing: 20 },
+      jiomart: { name: 'JioMart', gComm: 7, pComm: 10, sComm: 7, tcs: 1, gstC: 18, closing: 30 },
+      flipkart: { name: 'Flipkart Grocery', gComm: 9, pComm: 11, sComm: 9, tcs: 1, gstC: 18, closing: 45 },
+      blinkit: { name: 'Blinkit', gComm: 11, pComm: 17, sComm: 13, tcs: 1, gstC: 18, closing: 10, storage: 60 },
+      zepto: { name: 'Zepto', gComm: 17, pComm: 20, sComm: 16, tcs: 1, gstC: 18, closing: 10, storage: 70 }
+    };
 
-</div><!-- end tab-docs -->
+    function calculate() {
+      const productVal = document.getElementById('calcProduct').value;
+      const type = productVal.split(',')[1];
+      const platKey = document.getElementById('calcPlatform').value;
+      const sp = parseFloat(document.getElementById('calcSP').value) || 0;
+      const cp = parseFloat(document.getElementById('calcCP').value) || 0;
+      const pk = parseFloat(document.getElementById('calcPK').value) || 0;
 
-</div><!-- end .content -->
+      const p = PLATFORMS[platKey];
+      let commPct = type === 'personal' ? p.pComm : type === 'snack' ? p.sComm : p.gComm;
 
-<!-- FOOTER -->
-<div class="footer-note">
-  <strong>Prepared by Vedhaan Technology</strong><br>
-  Bhavnagar, Gujarat · <a href="https://www.vedhaan.com" target="_blank">vedhaan.com</a><br><br>
-  This document is confidential and prepared specifically for the client named Kinjal Shah.<br>
-  Prices are indicative based on market research as of May 2026.<br>
-  Platform commission rates may change <br>
-  Packaging charges are excluded.
-</div>
+      // Amazon 0% if <= 300 and grocery/snack
+      if (platKey === 'amazon' && sp <= 300 && type !== 'personal') commPct = 0;
 
-<script>
-function showTab(id, btn) {
-  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
-  window.scrollTo({ top: 0 });
-}
+      const commission = Math.round(sp * commPct / 100);
+      const gstOnComm = Math.round(commission * p.gstC / 100);
+      const tcs = Math.round(sp * p.tcs / 100);
+      const closing = p.closing || 0;
+      const storage = p.storage || 0;
+      const totalDeductions = commission + gstOnComm + tcs + closing + storage;
+      const payout = sp - totalDeductions;
+      const netProfit = payout - cp - pk;
+      const margin = sp > 0 ? Math.round((netProfit / sp) * 100) : 0;
+      const profitable = netProfit > 0;
 
-const PLATFORMS = {
-  amazon:   { name:'Amazon Fresh', gComm:5, pComm:9, sComm:3, tcs:1, gstC:18, closing:20 },
-  jiomart:  { name:'JioMart',       gComm:7, pComm:10, sComm:7, tcs:1, gstC:18, closing:30 },
-  flipkart: { name:'Flipkart Grocery', gComm:9, pComm:11, sComm:9, tcs:1, gstC:18, closing:45 },
-  blinkit:  { name:'Blinkit',       gComm:11, pComm:17, sComm:13, tcs:1, gstC:18, closing:10, storage:60 },
-  zepto:    { name:'Zepto',         gComm:17, pComm:20, sComm:16, tcs:1, gstC:18, closing:10, storage:70 }
-};
+      const marginColor = margin >= 25 ? '#4caf50' : margin >= 15 ? '#f59e0b' : '#ef5350';
+      const fillW = Math.max(0, Math.min(100, margin));
 
-function calculate() {
-  const productVal = document.getElementById('calcProduct').value;
-  const type = productVal.split(',')[1];
-  const platKey = document.getElementById('calcPlatform').value;
-  const sp = parseFloat(document.getElementById('calcSP').value) || 0;
-  const cp = parseFloat(document.getElementById('calcCP').value) || 0;
-  const pk = parseFloat(document.getElementById('calcPK').value) || 0;
+      let warningHTML = '';
+      if (!profitable) {
+        warningHTML = `<div class="alert alert-amber" style="margin:0 1.25rem 1.25rem;font-size:13px"><span class="alert-icon">⚠</span><span>This price results in a <strong>loss</strong>. Either increase selling price or reduce cost.</span></div>`;
+      } else if (margin < 15) {
+        warningHTML = `<div class="alert alert-amber" style="margin:0 1.25rem 1.25rem;font-size:13px"><span class="alert-icon">⚠</span><span>Margin is very thin. A single return or damaged order wipes out profit from 3–4 sales.</span></div>`;
+      }
 
-  const p = PLATFORMS[platKey];
-  let commPct = type === 'personal' ? p.pComm : type === 'snack' ? p.sComm : p.gComm;
+      let storageRow = storage > 0 ? `<div class="breakdown-row"><span class="breakdown-key">Dark store storage</span><span style="color:var(--amber)">−₹${storage}</span></div>` : '';
 
-  // Amazon 0% if <= 300 and grocery/snack
-  if (platKey === 'amazon' && sp <= 300 && type !== 'personal') commPct = 0;
-
-  const commission = Math.round(sp * commPct / 100);
-  const gstOnComm = Math.round(commission * p.gstC / 100);
-  const tcs = Math.round(sp * p.tcs / 100);
-  const closing = p.closing || 0;
-  const storage = p.storage || 0;
-  const totalDeductions = commission + gstOnComm + tcs + closing + storage;
-  const payout = sp - totalDeductions;
-  const netProfit = payout - cp - pk;
-  const margin = sp > 0 ? Math.round((netProfit / sp) * 100) : 0;
-  const profitable = netProfit > 0;
-
-  const marginColor = margin >= 25 ? '#4caf50' : margin >= 15 ? '#f59e0b' : '#ef5350';
-  const fillW = Math.max(0, Math.min(100, margin));
-
-  let warningHTML = '';
-  if (!profitable) {
-    warningHTML = `<div class="alert alert-amber" style="margin:0 1.25rem 1.25rem;font-size:13px"><span class="alert-icon">⚠</span><span>This price results in a <strong>loss</strong>. Either increase selling price or reduce cost.</span></div>`;
-  } else if (margin < 15) {
-    warningHTML = `<div class="alert alert-amber" style="margin:0 1.25rem 1.25rem;font-size:13px"><span class="alert-icon">⚠</span><span>Margin is very thin. A single return or damaged order wipes out profit from 3–4 sales.</span></div>`;
-  }
-
-  let storageRow = storage > 0 ? `<div class="breakdown-row"><span class="breakdown-key">Dark store storage</span><span style="color:var(--amber)">−₹${storage}</span></div>` : '';
-
-  document.getElementById('calcResult').innerHTML = `
+      document.getElementById('calcResult').innerHTML = `
     <div class="calc-result-header">
       <div>
         <div class="calc-result-title">${p.name} · Commission: ${commPct}%</div>
-        <div class="calc-result-profit ${profitable?'positive':'negative'}">${profitable?'+':'−'}₹${Math.abs(netProfit)} ${profitable?'profit':'loss'}</div>
+        <div class="calc-result-profit ${profitable ? 'positive' : 'negative'}">${profitable ? '+' : '−'}₹${Math.abs(netProfit)} ${profitable ? 'profit' : 'loss'}</div>
       </div>
       <div style="text-align:right">
         <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:4px">margin</div>
@@ -1258,7 +2082,7 @@ function calculate() {
       <div class="calc-cell"><div class="calc-cell-label">GST on commission</div><div class="calc-cell-val deduct">−₹${gstOnComm}</div></div>
       <div class="calc-cell"><div class="calc-cell-label">TCS (govt.)</div><div class="calc-cell-val deduct">−₹${tcs}</div></div>
       <div class="calc-cell"><div class="calc-cell-label">Closing/handling fee</div><div class="calc-cell-val deduct">−₹${closing}</div></div>
-      <div class="calc-cell"><div class="calc-cell-label">Your cost + packaging</div><div class="calc-cell-val deduct">−₹${cp+pk}</div></div>
+      <div class="calc-cell"><div class="calc-cell-label">Your cost + packaging</div><div class="calc-cell-val deduct">−₹${cp + pk}</div></div>
     </div>
     <div class="margin-bar-wrap">
       <div class="margin-bar-label"><span>Net margin</span><span style="font-weight:600;color:${marginColor}">${margin}%</span></div>
@@ -1277,9 +2101,10 @@ function calculate() {
     </div>
     ${warningHTML}
   `;
-}
+    }
 
-calculate();
-</script>
+    calculate();
+  </script>
 </body>
+
 </html>
