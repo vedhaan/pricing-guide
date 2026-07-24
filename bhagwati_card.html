@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Pricing Guide — Bhagwati Card Company</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #fafaf8;
+      --off: #f2f0eb;
+      --border: #e0ddd6;
+      --muted: #888580;
+      --green: #2d6a2d;
+      --green-bg: #edf7ed;
+      --amber: #7a5000;
+      --amber-bg: #fff8e6;
+      --red: #7a1f1f;
+      --red-bg: #fef2f2;
+      --blue: #1a3d6e;
+      --blue-bg: #eff5ff;
+      --accent: #9c3b3b;
+      --accent-light: #fbe9e9;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 15px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img, svg, table {
+      max-width: 100%;
+    }
+
+    /* ─── HEADER ─── */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 3rem 1.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 40px solid rgba(156, 59, 59, 0.15);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 30%;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 25px solid rgba(156, 59, 59, 0.08);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1px solid rgba(156, 59, 59, 0.5);
+      border-radius: 100px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #d98a8a;
+      margin-bottom: 1rem;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: .75rem;
+      position: relative;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #d98a8a;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: rgba(250, 250, 248, 0.55);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta span {
+      font-size: 12px;
+      color: rgba(250, 250, 248, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #d98a8a;
+      display: inline-block
+    }
+
+    /* ─── NAV TABS ─── */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.25rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-inner {
+      display: inline-flex;
+      gap: 0;
+      min-width: 100%;
+    }
+
+    .nav-tab {
+      padding: .85rem 1.1rem;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all .2s;
+      white-space: nowrap;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .nav-tab.active {
+      color: var(--black);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ─── CONTENT ─── */
+    .content {
+      padding: 1.5rem 1.25rem 4rem;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .tab-section {
+      display: none
+    }
+
+    .tab-section.active {
+      display: block
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin: 2rem 0 .75rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label:first-child {
+      margin-top: 0
+    }
+
+    /* ─── CARDS ─── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .card.featured {
+      border-color: var(--accent);
+      border-width: 1.5px;
+    }
+
+    .card.dark {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+
+    /* ─── BADGES ─── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
+
+    .badge-green {
+      background: var(--green-bg);
+      color: var(--green)
+    }
+
+    .badge-amber {
+      background: var(--amber-bg);
+      color: var(--amber)
+    }
+
+    .badge-blue {
+      background: var(--blue-bg);
+      color: var(--blue)
+    }
+
+    .badge-accent {
+      background: var(--accent-light);
+      color: var(--accent)
+    }
+
+    /* ─── PLAN CARDS ─── */
+    .plan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: .5rem;
+    }
+
+    .plan-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .plan-tagline {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .price-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--border);
+      gap: .5rem;
+    }
+
+    .price-block:last-of-type {
+      border-bottom: none
+    }
+
+    .pb-label {
+      font-size: 13px;
+      color: var(--muted);
+      flex: 1
+    }
+
+    .pb-right {
+      text-align: right
+    }
+
+    .pb-val {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black)
+    }
+
+    .pb-note {
+      font-size: 11px;
+      color: var(--muted)
+    }
+
+    .total-row {
+      background: var(--off);
+      border-radius: 10px;
+      padding: .85rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .75rem;
+    }
+
+    .total-label {
+      font-size: 13px;
+      font-weight: 500
+    }
+
+    .total-val {
+      font-size: 22px;
+      font-weight: 700;
+      font-family: 'Syne', sans-serif;
+      color: var(--accent)
+    }
+
+    /* ─── ALERT BOXES ─── */
+    .alert {
+      border-radius: 10px;
+      padding: .85rem 1rem;
+      font-size: 13px;
+      margin: .75rem 0;
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .alert-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .alert-green {
+      background: var(--green-bg);
+      color: var(--green)
+    }
+
+    .alert-amber {
+      background: var(--amber-bg);
+      color: var(--amber)
+    }
+
+    .alert-blue {
+      background: var(--blue-bg);
+      color: var(--blue)
+    }
+
+    /* ─── PRODUCT/DATA TABLE ─── */
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .product-table {
+      width: 100%;
+      min-width: 460px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .product-table th {
+      text-align: left;
+      padding: .6rem .75rem;
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      font-weight: 500;
+      background: var(--off);
+    }
+
+    .product-table td {
+      padding: .65rem .75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .product-table tr:last-child td {
+      border-bottom: none
+    }
+
+    .product-table tr:hover td {
+      background: var(--off)
+    }
+
+    /* ─── CALCULATOR ─── */
+    .calc-wrap {
+      background: var(--off);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 1rem
+    }
+
+    .form-group {
+      margin-bottom: 1rem
+    }
+
+    .form-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: .4rem;
+      display: block;
+      font-weight: 500;
+      letter-spacing: .03em
+    }
+
+    select,
+    input[type=number] {
+      width: 100%;
+      padding: .6rem .85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      font-size: 14px;
+      color: var(--black);
+      font-family: 'DM Sans', sans-serif;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    select:focus,
+    input:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem 0;
+    }
+
+    .checkbox-row label {
+      font-size: 13px;
+      color: var(--black);
+      flex: 1;
+    }
+
+    .checkbox-row input[type=checkbox] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+    }
+
+    .calc-result {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .calc-result-header {
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calc-result-title {
+      font-size: 13px;
+      opacity: .6
+    }
+
+    .calc-result-total {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #e6a5a5;
+    }
+
+    .calc-breakdown {
+      padding: 1.25rem;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: .4rem 0;
+      border-bottom: 1px dotted var(--border);
+    }
+
+    .breakdown-row:last-child {
+      border-bottom: none;
+      font-weight: 600;
+      padding-top: .6rem;
+    }
+
+    .breakdown-key {
+      color: var(--muted)
+    }
+
+    /* ─── GUIDE CARD ─── */
+    .price-guide-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .pgc-header {
+      padding: 1rem 1.25rem;
+      background: var(--off);
+      border-bottom: 1px solid var(--border);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: .75rem 0
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 2rem 1.25rem 3rem;
+      border-top: 1px solid var(--border);
+      line-height: 1.7;
+    }
+
+    .footer-note strong {
+      color: var(--black)
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:600px) {
+      .hero {
+        padding: 2.25rem 1.25rem 2rem;
+      }
+
+      .content {
+        padding: 1.25rem 1rem 3rem;
+      }
+
+      .card, .price-guide-card, .calc-wrap {
+        border-radius: 12px;
+      }
+    }
+
+    @media(max-width:480px) {
+      .price-block {
+        flex-direction: column;
+        gap: .2rem
+      }
+
+      .pb-right {
+        text-align: left
+      }
+
+      .plan-header {
+        flex-direction: column;
+        gap: .4rem;
+      }
+
+      .total-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .3rem;
+      }
+
+      .product-table {
+        font-size: 12px;
+        min-width: 400px;
+      }
+
+      .product-table th,
+      .product-table td {
+        padding: .5rem .5rem;
+      }
+    }
+
+    @media(max-width:380px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero-meta {
+        gap: 1rem;
+      }
+
+      .phase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-tab {
+        padding: .8rem .85rem;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Prepared by Vedhaan Technology</div>
+    <h1>Website<br><em>Pricing Guide</em></h1>
+    <div class="hero-sub">Bhagwati Card Company · Catalogue site · Setup cost, scope & options</div>
+    <div class="hero-meta">
+      <span><span class="dot"></span> &lt;100 SKUs</span>
+      <span><span class="dot"></span> WhatsApp order flow</span>
+      <span><span class="dot"></span> Bhavnagar, Gujarat</span>
+      <span><span class="dot"></span> Jul 2026</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="sticky-nav" aria-label="Section navigation">
+    <div class="nav-inner">
+      <button class="nav-tab active" onclick="showTab('plans',this)">Service Plans</button>
+      <button class="nav-tab" onclick="showTab('scope',this)">Scope Comparison</button>
+      <button class="nav-tab" onclick="showTab('calculator',this)">Cost Calculator</button>
+      <button class="nav-tab" onclick="showTab('docs',this)">What We Need</button>
+      <button class="nav-tab" onclick="showTab('recommend',this)">Recommendation</button>
+    </div>
+  </nav>
+
+  <div class="content">
+
+    <!-- ══════════ TAB 1: SERVICE PLANS ══════════ -->
+    <div class="tab-section active" id="tab-plans">
+
+      <div class="section-label">One-time build cost</div>
+
+      <div class="card featured">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Core Build</div>
+            <div class="plan-tagline">React + Supabase · No Node · WhatsApp-only ordering</div>
+          </div>
+          <span class="badge badge-accent">Recommended</span>
+        </div>
+
+        <div class="section-label" style="margin-top:.25rem">Setup</div>
+        <div class="price-block">
+          <div class="pb-label">Frontend build<br><span style="font-size:11px;color:#aaa">Home, category / occasion /
+              price filters, product grid, product detail w/ gallery, WhatsApp CTA on every card, About &amp;
+              Contact</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹18,000–25,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Supabase backend<br><span style="font-size:11px;color:#aaa">Products + categories
+              schema, image storage, row-level security — no server needed</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹5,000–8,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Admin panel<br><span style="font-size:11px;color:#aaa">Auth-gated dashboard, product
+              CRUD, images, price, category, active/inactive toggle</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹12,000–18,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">QA + deployment<br><span style="font-size:11px;color:#aaa">Cross-device testing, deploy,
+              domain hookup</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹3,000–5,000</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Total Setup Cost</div>
+          <div class="total-val">₹38,000–56,000</div>
+        </div>
+
+        <div class="tag-row">
+          <span class="badge badge-green">React</span>
+          <span class="badge badge-green">Supabase</span>
+          <span class="badge badge-green">No cart</span>
+          <span class="badge badge-green">No payment gateway</span>
+        </div>
+
+        <div class="alert alert-blue" style="margin-top:1rem">
+          <span class="alert-icon">ℹ</span>
+          <span>No Node.js layer here on purpose — with under 100 products, no cart, and no payments, Supabase's client
+            SDK serves the storefront and the admin panel directly. Adding a server for this scope is cost with no
+            functional payoff.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Node Add-on</div>
+            <div class="plan-tagline">Only if you need server-side logic</div>
+          </div>
+          <span class="badge badge-blue">Optional</span>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">WhatsApp Business API auto-messaging<br><span style="font-size:11px;color:#aaa">Beyond a
+              wa.me link — automated replies, order confirmations</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹8,000–12,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Click / interest analytics<br><span style="font-size:11px;color:#aaa">Which cards get
+              the most WhatsApp clicks, by category</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹4,000–6,000</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="pb-label">Multi-admin roles &amp; permissions<br><span style="font-size:11px;color:#aaa">Separate
+              logins for staff vs owner</span></div>
+          <div class="pb-right">
+            <div class="pb-val">₹3,000–7,000</div>
+          </div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">Add-on Range</div>
+          <div class="total-val">₹15,000–25,000</div>
+        </div>
+      </div>
+
+      <div class="alert alert-amber">
+        <span class="alert-icon">⚠</span>
+        <span><strong>Client's responsibility:</strong> domain (~₹800–1,200/yr) and the WhatsApp number the site links
+          to. Supabase and hosting (Vercel/Netlify) free tiers comfortably cover this scale — don't quote recurring
+          hosting fees unless the catalogue or traffic grows well past this range.</span>
+      </div>
+
+    </div><!-- end tab-plans -->
+
+
+    <!-- ══════════ TAB 2: SCOPE COMPARISON ══════════ -->
+    <div class="tab-section" id="tab-scope">
+
+      <div class="section-label">Core Build vs Core + Node</div>
+      <div class="price-guide-card">
+        <div class="pgc-header">
+          <span>What's included</span>
+          <span style="font-size:12px;font-weight:400;color:var(--muted)">Core vs +Node</span>
+        </div>
+        <div class="table-scroll">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th style="text-align:center">Core</th>
+              <th style="text-align:center">+Node</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Browse by category / occasion / price</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>Product detail + image gallery</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>WhatsApp link per product (wa.me)</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>Admin panel — product CRUD</td>
+              <td style="text-align:center">✅</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>Automated WhatsApp replies / confirmations</td>
+              <td style="text-align:center">❌</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>Click / interest analytics dashboard</td>
+              <td style="text-align:center">❌</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>Multi-admin roles</td>
+              <td style="text-align:center">❌</td>
+              <td style="text-align:center">✅</td>
+            </tr>
+            <tr>
+              <td>Server to maintain &amp; secure</td>
+              <td style="text-align:center;color:var(--green);font-weight:600">None</td>
+              <td style="text-align:center;color:var(--amber);font-weight:600">Yes</td>
+            </tr>
+            <tr>
+              <td>Build time</td>
+              <td style="text-align:center;color:var(--green)">2–3 weeks</td>
+              <td style="text-align:center;color:var(--amber)">3–5 weeks</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <div class="section-label">Why the reference site doesn't set the scope</div>
+      <div class="card">
+        <div class="fee-row"></div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">King of Cards is a full Shopify store: thousands of
+          SKUs, nested category trees, cart, checkout, blog CMS, store locator, reviews. Bhagwati Card Company's brief
+          is browse-and-WhatsApp with under 100 products — a smaller, cheaper build by design, not by cutting
+          corners. Match the visual polish of the reference; don't match its feature list.</p>
+      </div>
+
+    </div><!-- end tab-scope -->
+
+
+    <!-- ══════════ TAB 3: COST CALCULATOR ══════════ -->
+    <div class="tab-section" id="tab-calculator">
+
+      <div class="calc-wrap">
+        <div class="form-group">
+          <label class="form-label">Catalogue size at launch</label>
+          <select id="calcSize" onchange="calculate()">
+            <option value="small">Under 100 products</option>
+            <option value="mid">100–500 products</option>
+            <option value="large">500–2000 products</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:.25rem">
+          <label class="form-label">Add-ons</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="addAdmin" checked disabled>
+          <label for="addAdmin">Admin panel (product CRUD) — included</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="addWA" onchange="calculate()">
+          <label for="addWA">WhatsApp API auto-messaging</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="addAnalytics" onchange="calculate()">
+          <label for="addAnalytics">Click / interest analytics</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="addRoles" onchange="calculate()">
+          <label for="addRoles">Multi-admin roles</label>
+        </div>
+      </div>
+
+      <div class="calc-result" id="calcResult"><!-- filled by JS --></div>
+
+      <div class="alert alert-amber" style="margin-top:1rem">
+        <span class="alert-icon">⚠</span>
+        <span>Any add-on checked pulls in the Node layer — quote it as one package, not per feature, since the server
+          setup itself is a fixed cost regardless of how many add-ons sit on top of it.</span>
+      </div>
+
+    </div><!-- end tab-calculator -->
+
+
+    <!-- ══════════ TAB 4: WHAT WE NEED ══════════ -->
+    <div class="tab-section" id="tab-docs">
+
+      <div class="section-label">From the client, before build starts</div>
+
+      <div class="card">
+        <div class="plan-header" style="margin-bottom:.75rem">
+          <div>
+            <div class="plan-name" style="font-size:15px">Product data</div>
+            <div class="plan-tagline">Cards, prices, categories</div>
+          </div>
+          <span class="badge badge-amber">Required</span>
+        </div>
+        <div class="price-block"><div class="pb-label">Product photos (per card)</div><div class="pb-right"><div class="pb-val">High-res, min. 2 per card</div></div></div>
+        <div class="price-block"><div class="pb-label">Names, prices, categories/occasions</div><div class="pb-right"><div class="pb-val">Spreadsheet is fine</div></div></div>
+        <div class="price-block"><div class="pb-label">WhatsApp business number</div><div class="pb-right"><div class="pb-val">For the order link</div></div></div>
+      </div>
+
+      <div class="card">
+        <div class="plan-header" style="margin-bottom:.75rem">
+          <div>
+            <div class="plan-name" style="font-size:15px">Brand assets</div>
+            <div class="plan-tagline">Logo &amp; identity</div>
+          </div>
+          <span class="badge badge-amber">Required</span>
+        </div>
+        <div class="price-block"><div class="pb-label">Logo (vector or high-res PNG)</div><div class="pb-right"><div class="pb-val">If not available, we design one — quoted separately</div></div></div>
+        <div class="price-block"><div class="pb-label">Brand colours, if any exist</div><div class="pb-right"><div class="pb-val">Otherwise we propose a palette</div></div></div>
+      </div>
+
+      <div class="card">
+        <div class="plan-header" style="margin-bottom:.75rem">
+          <div>
+            <div class="plan-name" style="font-size:15px">Domain &amp; hosting</div>
+            <div class="plan-tagline">Client-side expense</div>
+          </div>
+          <span class="badge badge-amber">Required</span>
+        </div>
+        <div class="price-block"><div class="pb-label">Domain registration</div><div class="pb-right"><div class="pb-val">~₹800–1,200/yr</div></div></div>
+        <div class="price-block"><div class="pb-label">Hosting (Vercel/Netlify free tier)</div><div class="pb-right"><div class="pb-val">₹0 at this scale</div></div></div>
+      </div>
+
+      <div class="section-label">Estimated timeline</div>
+      <div class="card dark">
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1);display:flex;justify-content:space-between;padding:.5rem 0">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 1</span>
+          <span style="color:var(--white);font-size:13px;font-weight:500">Content collection + Supabase schema + admin panel skeleton</span>
+        </div>
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1);display:flex;justify-content:space-between;padding:.5rem 0">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 2</span>
+          <span style="color:var(--white);font-size:13px;font-weight:500">Frontend build — browse, filters, product pages</span>
+        </div>
+        <div class="fee-row" style="border-color:rgba(255,255,255,0.1);display:flex;justify-content:space-between;padding:.5rem 0">
+          <span style="color:rgba(255,255,255,0.5);font-size:13px">Week 3</span>
+          <span style="color:#e6a5a5;font-size:13px;font-weight:500">QA, WhatsApp links, deploy, domain hookup 🚀</span>
+        </div>
+      </div>
+
+    </div><!-- end tab-docs -->
+
+  </div><!-- end .content -->
+
+  <!-- FOOTER -->
+  <div class="footer-note">
+    <strong>Prepared by Vedhaan Technology</strong><br>
+    Bhavnagar, Gujarat<br><br>
+    This document is confidential and prepared specifically for Bhagwati Card Company.<br>
+    Prices are indicative based on current scope. Confirm final numbers once product count and add-ons are locked.
+  </div>
+
+  <script>
+    function showTab(id, btn) {
+      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      btn.classList.add('active');
+      window.scrollTo({ top: 0 });
+    }
+
+    const SIZE_BASE = {
+      small: { frontend: 21500, backend: 6500, admin: 15000, qa: 4000 },
+      mid: { frontend: 30000, backend: 10000, admin: 20000, qa: 6000 },
+      large: { frontend: 42000, backend: 15000, admin: 26000, qa: 8000 }
+    };
+
+    function calculate() {
+      const size = document.getElementById('calcSize').value;
+      const wa = document.getElementById('addWA').checked;
+      const analytics = document.getElementById('addAnalytics').checked;
+      const roles = document.getElementById('addRoles').checked;
+      const needsNode = wa || analytics || roles;
+
+      const b = SIZE_BASE[size];
+      let total = b.frontend + b.backend + b.admin + b.qa;
+
+      let nodeBase = 0, waCost = 0, analyticsCost = 0, rolesCost = 0;
+      if (needsNode) {
+        nodeBase = 4000; // fixed server setup cost, once, if any add-on is picked
+        total += nodeBase;
+      }
+      if (wa) { waCost = 9000; total += waCost; }
+      if (analytics) { analyticsCost = 5000; total += analyticsCost; }
+      if (roles) { rolesCost = 4500; total += rolesCost; }
+
+      let rows = `
+        <div class="breakdown-row"><span class="breakdown-key">Frontend build</span><span>₹${b.frontend.toLocaleString('en-IN')}</span></div>
+        <div class="breakdown-row"><span class="breakdown-key">Supabase backend</span><span>₹${b.backend.toLocaleString('en-IN')}</span></div>
+        <div class="breakdown-row"><span class="breakdown-key">Admin panel</span><span>₹${b.admin.toLocaleString('en-IN')}</span></div>
+        <div class="breakdown-row"><span class="breakdown-key">QA + deployment</span><span>₹${b.qa.toLocaleString('en-IN')}</span></div>
+      `;
+      if (needsNode) rows += `<div class="breakdown-row"><span class="breakdown-key">Node server setup (one-time)</span><span>₹${nodeBase.toLocaleString('en-IN')}</span></div>`;
+      if (wa) rows += `<div class="breakdown-row"><span class="breakdown-key">WhatsApp API auto-messaging</span><span>₹${waCost.toLocaleString('en-IN')}</span></div>`;
+      if (analytics) rows += `<div class="breakdown-row"><span class="breakdown-key">Click / interest analytics</span><span>₹${analyticsCost.toLocaleString('en-IN')}</span></div>`;
+      if (roles) rows += `<div class="breakdown-row"><span class="breakdown-key">Multi-admin roles</span><span>₹${rolesCost.toLocaleString('en-IN')}</span></div>`;
+      rows += `<div class="breakdown-row"><span>Estimated total</span><span>₹${total.toLocaleString('en-IN')}</span></div>`;
+
+      document.getElementById('calcResult').innerHTML = `
+        <div class="calc-result-header">
+          <div>
+            <div class="calc-result-title">${needsNode ? 'Core Build + Node' : 'Core Build (no Node)'}</div>
+            <div class="calc-result-total">₹${total.toLocaleString('en-IN')}</div>
+          </div>
+        </div>
+        <div class="calc-breakdown">${rows}</div>
+      `;
+    }
+
+    calculate();
+  </script>
+</body>
+
+</html>
